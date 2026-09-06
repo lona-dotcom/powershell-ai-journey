@@ -7,7 +7,7 @@ param(
 
 # 📌 Liste des fichiers à ignorer (ne pas déplacer)
 $fichiersAIgnorer = @(
-    "organiser-fichiers.ps1",
+    "organiser.ps1",
     "organiser_fichiers.py",
     "Setup-projet.ps1",
     ".gitignore",
