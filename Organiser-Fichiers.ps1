@@ -5,6 +5,16 @@ param(
     [string]$DossierSource = "."
 )
 
+# 📌 Liste des fichiers à ignorer (ne pas déplacer)
+$fichiersAIgnorer = @(
+    "organiser-fichiers.ps1",
+    "organiser_fichiers.py",
+    "Setup-projet.ps1",
+    ".gitignore",
+    ".env",
+    "README.md"
+)
+
 # Définir les règles de classification
 $regles = @{
     "\.ps1$" = "scripts-utilitaires"
@@ -23,6 +33,13 @@ $regles = @{
 # Parcourir tous les fichiers du dossier courant (sauf les dossiers existants)
 Get-ChildItem -Path $DossierSource -File | ForEach-Object {
     $fichier = $_.Name
+
+    # ⚠️ IGNORER les fichiers exclus
+    if ($fichiersAIgnorer -contains $fichier) {
+        Write-Host "⏭️ Ignoré : $fichier (fichier système)" -ForegroundColor Yellow
+        return
+    }
+
     $extension = $_.Extension
     $destination = $null
     

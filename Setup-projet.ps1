@@ -1,389 +1,423 @@
-<#
-.SYNOPSIS
-    Setup-Projet.ps1 - Initialise l'environnement complet pour la roadmap PowerShell + IA
+# ============================================================
+# Setup-Projet.ps1
+# Script d'installation automatisée pour PowerShell + Python + IA
+# ============================================================
 
-.DESCRIPTION
-    Ce script cree toute la structure de dossiers, les fichiers de configuration,
-    et prepare l'environnement pour suivre la roadmap PowerShell augmentee par l'IA.
+# Configuration des couleurs
+$Cyan = "Cyan"
+$Green = "Green"
+$Yellow = "Yellow"
+$Red = "Red"
+$Magenta = "Magenta"
 
-.PARAMETER Chemin
-    Chemin d'installation du projet (par defaut : ~/Documents/GitHub/powershell-ai-journey)
+Write-Host @"
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║   🚀  PowerShell + Python + AI  -  Installation complète    ║
+║                                                              ║
+║   Ce script va configurer automatiquement votre projet       ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+"@ -ForegroundColor $Magenta
 
-.PARAMETER ApiKey
-    Cle API OpenAI (optionnelle, sera demandee si non fournie)
+# ============================================================
+# ÉTAPE 1 : VÉRIFICATION DES PRÉREQUIS
+# ============================================================
+Write-Host "`n📋 ÉTAPE 1 : Vérification des prérequis..." -ForegroundColor $Cyan
 
-.PARAMETER NoGit
-    Desactive l'initialisation du depot Git
-
-.EXAMPLE
-    .\Setup-Projet.ps1
-    Cree le projet dans le dossier par defaut
-
-.EXAMPLE
-    .\Setup-Projet.ps1 -Chemin "C:\Dev\PowerShellIA" -ApiKey "sk-xxxxx"
-    Cree le projet dans un dossier specifique avec la cle API
-#>
-
-[CmdletBinding()]
-param(
-    [Parameter()]
-    [string]$Chemin = "$env:USERPROFILE\Documents\GitHub\powershell-ai-journey",
-    
-    [Parameter()]
-    [string]$ApiKey,
-    
-    [Parameter()]
-    [switch]$NoGit
-)
-# =============================================
-# 1. VERIFICATION DES PRE-REQUIS
-# =============================================
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  ROUGE SETUP DU PROJET POWERSHELL + IA" -ForegroundColor Green
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host ""
-
+# Vérifier PowerShell 7+
 $psVersion = $PSVersionTable.PSVersion
 if ($psVersion.Major -lt 7) {
-    Write-Host "ERREUR PowerShell 7+ est requis (version actuelle: $psVersion)" -ForegroundColor Red
-    Write-Host "Telechargez PowerShell 7 : https://github.com/PowerShell/PowerShell" -ForegroundColor Yellow
+    Write-Host "❌ PowerShell 7+ requis (version actuelle : $psVersion)" -ForegroundColor $Red
+    Write-Host "📥 Téléchargez PowerShell 7 : https://github.com/PowerShell/PowerShell/releases" -ForegroundColor $Yellow
     exit 1
 }
-Write-Host "OK PowerShell $psVersion detecte" -ForegroundColor Green
+Write-Host "✅ PowerShell $psVersion" -ForegroundColor $Green
 
-if (!$NoGit) {
-    $gitPath = Get-Command git -ErrorAction SilentlyContinue
-    if ($gitPath) {
-        Write-Host "OK Git detecte : $($gitPath.Source)" -ForegroundColor Green
+# Vérifier Python
+try {
+    $pythonVersion = python --version 2>&1
+    if ($pythonVersion -match "Python (\d+\.\d+\.\d+)") {
+        $pyVer = [version]$Matches[1]
+        if ($pyVer.Major -lt 3 -or ($pyVer.Major -eq 3 -and $pyVer.Minor -lt 12)) {
+            Write-Host "⚠️  Python 3.12+ recommandé (version : $pyVer)" -ForegroundColor $Yellow
+        } else {
+            Write-Host "✅ Python $pyVer" -ForegroundColor $Green
+        }
+    }
+} catch {
+    Write-Host "❌ Python n'est pas installé ou n'est pas dans le PATH" -ForegroundColor $Red
+    Write-Host "📥 Téléchargez Python : https://python.org/downloads" -ForegroundColor $Yellow
+    exit 1
+}
+
+# Vérifier Git
+try {
+    $gitVersion = git --version 2>&1
+    if ($gitVersion -match "git version") {
+        Write-Host "✅ $gitVersion" -ForegroundColor $Green
+    }
+} catch {
+    Write-Host "⚠️  Git n'est pas installé (optionnel pour le versioning)" -ForegroundColor $Yellow
+}
+
+Write-Host "✅ Tous les prérequis sont vérifiés !" -ForegroundColor $Green
+
+# ============================================================
+# ÉTAPE 2 : CRÉATION DE L'ENVIRONNEMENT VIRTUEL PYTHON
+# ============================================================
+Write-Host "`n📦 ÉTAPE 2 : Création de l'environnement virtuel Python..." -ForegroundColor $Cyan
+
+if (Test-Path ".venv") {
+    Write-Host "⚠️  Environnement virtuel existant détecté" -ForegroundColor $Yellow
+    $choice = Read-Host "Voulez-vous le recréer ? (o/N)"
+    if ($choice -eq "o" -or $choice -eq "O") {
+        Remove-Item -Path ".venv" -Recurse -Force
+        python -m venv .venv
+        Write-Host "✅ Environnement virtuel recréé" -ForegroundColor $Green
     } else {
-        Write-Host "ATTENTION Git non trouve - l'initialisation du depot sera ignoree" -ForegroundColor Yellow
-        Write-Host "Installez Git : https://git-scm.com/download/win" -ForegroundColor Yellow
-        $NoGit = $true
+        Write-Host "✅ Conservation de l'environnement existant" -ForegroundColor $Green
+    }
+} else {
+    python -m venv .venv
+    Write-Host "✅ Environnement virtuel créé" -ForegroundColor $Green
+}
+
+# ============================================================
+# ÉTAPE 3 : ACTIVATION ET INSTALLATION DES DÉPENDANCES
+# ============================================================
+Write-Host "`n📦 ÉTAPE 3 : Installation des dépendances Python..." -ForegroundColor $Cyan
+
+# Déterminer le chemin d'activation
+if ($IsWindows) {
+    $activateScript = ".\.venv\Scripts\Activate.ps1"
+} else {
+    $activateScript = ". .venv/bin/activate"
+}
+
+# Fonction pour exécuter dans l'environnement virtuel
+function Invoke-InVenv {
+    param([string]$Command)
+    if ($IsWindows) {
+        & ".venv\Scripts\python.exe" -c "$Command"
+    } else {
+        & ".venv/bin/python" -c "$Command"
     }
 }
 
-$vscodePath = Get-Command code -ErrorAction SilentlyContinue
-if ($vscodePath) {
-    Write-Host "OK VS Code detecte" -ForegroundColor Green
-} else {
-    Write-Host "INFO VS Code recommande : https://code.visualstudio.com/" -ForegroundColor Yellow
-}
+# Installer pip
+Write-Host "⬆️  Mise à jour de pip..." -ForegroundColor $Yellow
+Invoke-InVenv "import subprocess; subprocess.run(['pip', 'install', '--upgrade', 'pip'], check=True)"
 
-# =============================================
-# 2. CREATION DE LA STRUCTURE
-# =============================================
-Write-Host "`nCreation de la structure du projet..." -ForegroundColor Yellow
+# Installer les dépendances
+Write-Host "📦 Installation des dépendances..." -ForegroundColor $Yellow
+$requirements = @"
+python-dotenv>=1.0.0
+openai>=1.0.0
+anthropic>=0.7.0
+huggingface-hub>=0.20.0
+google-generativeai>=0.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+pymongo>=4.5.0
+psycopg2-binary>=2.9.0
+sqlalchemy>=2.0.0
+requests>=2.31.0
+aiohttp>=3.9.0
+typing-extensions>=4.5.0
+pydantic>=2.0.0
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+"@
 
-$structure = @(
-    "$Chemin\01-fondamentaux\cours",
-    "$Chemin\01-fondamentaux\projets",
-    "$Chemin\02-avancees\cours",
-    "$Chemin\02-avancees\projets",
-    "$Chemin\03-ia-integration\cours",
-    "$Chemin\03-ia-integration\projets",
-    "$Chemin\03-ia-integration\projets\AssistantScript\prompts",
-    "$Chemin\04-projets-experts",
-    "$Chemin\corrections",
-    "$Chemin\library\modules\MaBiblioPerso",
-    "$Chemin\library\fonctions",
-    "$Chemin\library\profiles",
-    "$Chemin\library\templates",
-    "$Chemin\data\logs",
-    "$Chemin\data\exports",
-    "$Chemin\data\samples",
-    "$Chemin\docs",
-    "$Chemin\scripts-utilitaires"
+$requirements | Out-File -FilePath "requirements.txt" -Encoding utf8 -Force
+Invoke-InVenv "import subprocess; subprocess.run(['pip', 'install', '-r', 'requirements.txt'], check=True)"
+
+Write-Host "✅ Dépendances installées !" -ForegroundColor $Green
+
+# ============================================================
+# ÉTAPE 4 : CRÉATION DE LA STRUCTURE DE DOSSIERS
+# ============================================================
+Write-Host "`n📁 ÉTAPE 4 : Création de la structure de dossiers..." -ForegroundColor $Cyan
+
+$dossiers = @(
+    "01-fondamentaux",
+    "02-avancees",
+    "03-ia-integration",
+    "04-projets-experts",
+    "scripts-utilitaires",
+    "library",
+    "data",
+    "docs",
+    "corrections"
 )
 
-foreach ($dossier in $structure) {
-    if (!(Test-Path $dossier)) {
+foreach ($dossier in $dossiers) {
+    if (-not (Test-Path $dossier)) {
         New-Item -Path $dossier -ItemType Directory -Force | Out-Null
-        Write-Host "  DOSSIER $dossier" -ForegroundColor Gray
+        Write-Host "  📁 Créé : $dossier/" -ForegroundColor $Green
+    } else {
+        Write-Host "  📁 Existe : $dossier/" -ForegroundColor $Gray
     }
 }
 
-Write-Host "OK Structure creee" -ForegroundColor Green
-# =============================================
-# 3. FICHIERS DE CONFIGURATION
-# =============================================
-Write-Host "`nGeneration des fichiers de configuration..." -ForegroundColor Yellow
+# ============================================================
+# ÉTAPE 5 : CRÉATION DES FICHIERS DE CONFIGURATION
+# ============================================================
+Write-Host "`n⚙️  ÉTAPE 5 : Création des fichiers de configuration..." -ForegroundColor $Cyan
 
-# 3.1 .gitignore
-$gitignoreContent = @'
-# Cles API et secrets
-*.key
-*.pem
-*.crt
-*.pfx
+# 5.1 : Créer .env
+if (-not (Test-Path ".env")) {
+    $envContent = @"
+# ============================================================
+# CONFIGURATION DU PROJET POWERSHELL + PYTHON + IA
+# ============================================================
+
+# ===== INTELLIGENCE ARTIFICIELLE =====
+# Obtenez vos clés API sur :
+# OpenAI : https://platform.openai.com/api-keys
+# Anthropic : https://console.anthropic.com/account/keys
+# Hugging Face : https://huggingface.co/settings/tokens
+# Google AI : https://makersuite.google.com/app/apikey
+
+OPENAI_API_KEY=
+ANTHROPIC_API_KEY=
+HUGGINGFACE_API_KEY=
+GOOGLE_AI_API_KEY=
+
+# ===== MODÈLES ET PARAMÈTRES =====
+MODEL_NAME=gpt-4-turbo
+TEMPERATURE=0.7
+MAX_TOKENS=4096
+
+# ===== BASES DE DONNÉES =====
+MONGODB_URI=mongodb://localhost:27017/ai_journey
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=
+POSTGRES_DB=ai_journey
+
+# ===== STOCKAGE CLOUD =====
+AZURE_STORAGE_CONNECTION_STRING=
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+S3_BUCKET_NAME=ai-journey-data
+
+# ===== CONFIGURATION PROJET =====
+PROJECT_ENV=development
+LOG_LEVEL=INFO
+"@
+    $envContent | Out-File -FilePath ".env" -Encoding utf8 -Force
+    Write-Host "✅ .env créé" -ForegroundColor $Green
+    Write-Host "⚠️  N'oubliez pas de remplir vos clés API dans .env !" -ForegroundColor $Red
+} else {
+    Write-Host "✅ .env existe déjà" -ForegroundColor $Green
+}
+
+# 5.2 : Créer .env.example
+$envExample = @"
+# ============================================================
+# CONFIGURATION DU PROJET (EXEMPLE)
+# ============================================================
+
+# INTELLIGENCE ARTIFICIELLE
+OPENAI_API_KEY=sk-proj-votre_cle_api_ici
+ANTHROPIC_API_KEY=sk-ant-votre_cle_api_ici
+HUGGINGFACE_API_KEY=hf_votre_cle_api_ici
+GOOGLE_AI_API_KEY=AIzaSy-votre_cle_api_ici
+
+# MODÈLES
+MODEL_NAME=gpt-4-turbo
+TEMPERATURE=0.7
+MAX_TOKENS=4096
+
+# BASES DE DONNÉES
+MONGODB_URI=mongodb://localhost:27017/ai_journey
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=super_secure_password
+POSTGRES_DB=ai_journey
+
+# STOCKAGE CLOUD
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=...
+AWS_ACCESS_KEY_ID=AKIAXXXXXXXXXXXXXX
+AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxx
+S3_BUCKET_NAME=ai-journey-data
+
+# PROJET
+PROJECT_ENV=development
+LOG_LEVEL=INFO
+"@
+$envExample | Out-File -FilePath ".env.example" -Encoding utf8 -Force
+Write-Host "✅ .env.example créé" -ForegroundColor $Green
+
+# 5.3 : Créer config.py dans library/
+$configPython = @"
+# library/config.py
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Charger .env
+BASE_DIR = Path(__file__).parent.parent
+ENV_FILE = BASE_DIR / '.env'
+load_dotenv(ENV_FILE)
+
+class Config:
+    \"\"\"Configuration centralisée du projet\"\"\"
+    
+    # === IA ===
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+    ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
+    HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY')
+    GOOGLE_AI_API_KEY = os.getenv('GOOGLE_AI_API_KEY')
+    
+    # === MODÈLES ===
+    MODEL_NAME = os.getenv('MODEL_NAME', 'gpt-4-turbo')
+    TEMPERATURE = float(os.getenv('TEMPERATURE', 0.7))
+    MAX_TOKENS = int(os.getenv('MAX_TOKENS', 4096))
+    
+    # === BASE DE DONNÉES ===
+    MONGODB_URI = os.getenv('MONGODB_URI')
+    POSTGRES_HOST = os.getenv('POSTGRES_HOST', 'localhost')
+    POSTGRES_PORT = int(os.getenv('POSTGRES_PORT', 5432))
+    POSTGRES_USER = os.getenv('POSTGRES_USER', 'admin')
+    POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+    POSTGRES_DB = os.getenv('POSTGRES_DB', 'ai_journey')
+    
+    # === STOCKAGE ===
+    AZURE_STORAGE_CONNECTION_STRING = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    S3_BUCKET_NAME = os.getenv('S3_BUCKET_NAME', 'ai-journey-data')
+    
+    # === PROJET ===
+    PROJECT_ENV = os.getenv('PROJECT_ENV', 'development')
+    LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
+    
+    @classmethod
+    def validate(cls):
+        \"\"\"Vérifier que les clés essentielles sont présentes\"\"\"
+        required = ['OPENAI_API_KEY']
+        missing = [key for key in required if not getattr(cls, key)]
+        if missing:
+            print(f"❌ Variables manquantes : {missing}")
+            return False
+        print("✅ Configuration validée !")
+        return True
+    
+    @classmethod
+    def summary(cls):
+        \"\"\"Afficher un résumé de la configuration\"\"\"
+        print("="*50)
+        print("📋 CONFIGURATION DU PROJET")
+        print("="*50)
+        print(f"🔹 Environnement : {cls.PROJECT_ENV}")
+        print(f"🔹 Modèle IA : {cls.MODEL_NAME}")
+        print(f"🔹 Température : {cls.TEMPERATURE}")
+        print(f"🔹 Max tokens : {cls.MAX_TOKENS}")
+        print(f"🔹 Log level : {cls.LOG_LEVEL}")
+        print(f"🔹 OpenAI : {'✅' if cls.OPENAI_API_KEY else '❌'}")
+        print(f"🔹 Anthropic : {'✅' if cls.ANTHROPIC_API_KEY else '❌'}")
+        print("="*50)
+
+config = Config()
+
+if __name__ == "__main__":
+    Config.summary()
+    Config.validate()
+"@
+$configPython | Out-File -FilePath "library\config.py" -Encoding utf8 -Force
+Write-Host "✅ library/config.py créé" -ForegroundColor $Green
+
+# 5.4 : Créer __init__.py dans library
+New-Item -Path "library\__init__.py" -ItemType File -Force | Out-Null
+Write-Host "✅ library/__init__.py créé" -ForegroundColor $Green
+
+# ============================================================
+# ÉTAPE 6 : CRÉATION DU .gitignore
+# ============================================================
+Write-Host "`n🔒 ÉTAPE 6 : Configuration de .gitignore..." -ForegroundColor $Cyan
+
+if (-not (Test-Path ".gitignore")) {
+    $gitignore = @"
+# ===== VARIABLES D'ENVIRONNEMENT =====
 .env
-secrets.ps1
-api_key.txt
-config_securisee.ps1
+.env.*
+*.env
+*.env.local
 
-# Dossiers de donnees
-data/logs/
-data/exports/
-data/samples/
-*.log
-*.csv
-*.json
-*.xml
-
-# Fichiers systeme
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# PowerShell
-*.psd1
-*.psm1
-*.ps1xml
-*.psss
-
-# Visual Studio Code
-.vscode/
-*.code-workspace
-
-# Python
+# ===== PYTHON =====
 __pycache__/
 *.pyc
 *.pyo
-venv/
+*.pyd
+.Python
 .venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.whl
+*.egg
 
-# Node
-node_modules/
-package-lock.json
+# ===== POWER SHELL =====
+*.ps1.bak
+*.psm1.bak
+*.psd1.bak
+*.ps1xml
 
-# Archives
-*.zip
-*.rar
-*.7z
-*.gz
-*.tar
-
-# Fichiers temporaires
-*.tmp
-*.bak
+# ===== IDÉ ET ÉDITEURS =====
+.vscode/
+.idea/
 *.swp
 *.swo
-~$*
-'@
-$gitignorePath = Join-Path $Chemin ".gitignore"
-$gitignoreContent | Out-File -FilePath $gitignorePath -Encoding UTF8
-Write-Host "  OK .gitignore" -ForegroundColor Gray
+*~
+.DS_Store
+Thumbs.db
 
-# 3.2 README.md
-$readmeContent = @'
-# PowerShell + IA - Roadmap Complete
+# ===== DONNÉES =====
+data/*.csv
+data/*.json
+data/*.db
+data/*.sqlite
+!data/.gitkeep
+logs/
+*.log
 
-Bienvenue sur mon depot d'etude dedie a la maitrise de PowerShell augmente par l'Intelligence Artificielle.
+# ===== FICHIERS SENSIBLES =====
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+*.secret
+config.local.ini
+credentials.json
 
-## Structure du depot
+# ===== DÉPENDANCES =====
+node_modules/
+jspm_packages/
 
-01-fondamentaux/ : Les bases : syntaxe, pipeline, premieres cmdlets
-02-avancees/ : Fonctions, gestion d'erreurs, remoting, AD
-03-ia-integration/ : API LLM, Prompt Engineering, PSAI, agents
-04-projets-experts/ : Projets complexes : monitoring, parc, DevOps
-corrections/ : Toutes les solutions des projets
-library/ : Modules et fonctions reutilisables
-data/ : Logs, exports, fichiers de test
-docs/ : Documentation generale
-scripts-utilitaires/ : Scripts d'automatisation du projet
-
-## Pre-requis
-
-- PowerShell 7.3+
-- Visual Studio Code avec l'extension PowerShell
-- Git
-- Cle API OpenAI pour les projets IA
-
-## Securite
-
-Ne versionnez JAMAIS vos cles API ou secrets. Utilisez le fichier .env pour stocker ces informations en local.
-'@
-$readmePath = Join-Path $Chemin "README.md"
-$readmeContent | Out-File -FilePath $readmePath -Encoding UTF8
-Write-Host "  OK README.md" -ForegroundColor Gray
-
-# 3.3 Fichier .env
-$envContent = @"
-# Fichier de configuration - NE PAS VERSIONNER
-OPENAI_API_KEY="votre_cle_api_ici"
-OPENAI_ORG_ID="votre_org_id_ici"
-OPENAI_PROJECT_ID="votre_project_id_ici"
-AZURE_SUBSCRIPTION_ID=""
-AZURE_TENANT_ID=""
-AZURE_CLIENT_ID=""
-AZURE_CLIENT_SECRET=""
-PROJECT_ROOT="$Chemin"
-LOG_LEVEL="Info"
+# ===== DIVERS =====
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
 "@
-$envPath = Join-Path $Chemin ".env"
-$envContent | Out-File -FilePath $envPath -Encoding UTF8
-Write-Host "  OK .env (template)" -ForegroundColor Gray
-# 3.4 Script Nouveau-Projet.ps1
-$nouveauProjetContent = @'
-<#
-.SYNOPSIS
-    Nouveau-Projet.ps1 - Cree un nouveau projet
-
-.PARAMETER Nom
-    Nom du projet
-
-.PARAMETER Etape
-    Etape cible (fondamentaux, avancees, ia-integration, projets-experts)
-#>
-
-param(
-    [Parameter(Mandatory)]
-    [string]$Nom,
-    
-    [Parameter(Mandatory)]
-    [ValidateSet("fondamentaux", "avancees", "ia-integration", "projets-experts")]
-    [string]$Etape
-)
-
-$basePath = Split-Path $PSScriptRoot
-$etapeNum = @{
-    "fondamentaux" = "01-fondamentaux"
-    "avancees" = "02-avancees"
-    "ia-integration" = "03-ia-integration"
-    "projets-experts" = "04-projets-experts"
+    $gitignore | Out-File -FilePath ".gitignore" -Encoding utf8 -Force
+    Write-Host "✅ .gitignore créé" -ForegroundColor $Green
+} else {
+    Write-Host "✅ .gitignore existe déjà" -ForegroundColor $Green
 }
 
-$projetPath = Join-Path $basePath "$($etapeNum[$Etape])\projets\$Nom"
-
-if (Test-Path $projetPath) {
-    Write-Error "Le projet $Nom existe deja !"
-    exit 1
-}
-
-New-Item -Path $projetPath -ItemType Directory -Force | Out-Null
-New-Item -Path "$projetPath\src" -ItemType Directory -Force | Out-Null
-New-Item -Path "$projetPath\tests" -ItemType Directory -Force | Out-Null
-New-Item -Path "$projetPath\docs" -ItemType Directory -Force | Out-Null
-
-Write-Host "OK Projet $Nom cree dans $projetPath" -ForegroundColor Green
-'@
-$nouveauProjetPath = Join-Path $Chemin "scripts-utilitaires\Nouveau-Projet.ps1"
-$nouveauProjetContent | Out-File -FilePath $nouveauProjetPath -Encoding UTF8
-Write-Host "  OK scripts-utilitaires\Nouveau-Projet.ps1" -ForegroundColor Gray
-
-# 3.5 Script Maj-Dependances.ps1
-$majDependancesContent = @'
-<#
-.SYNOPSIS
-    Maj-Dependances.ps1 - Installe les modules necessaires
-#>
-
-param([switch]$Force)
-
-Write-Host "Installation des dependances..." -ForegroundColor Yellow
-
-$modules = @(
-    @{Name = "PSAI"; Description = "Framework IA"},
-    @{Name = "PowerShellGet"; Description = "Gestionnaire"},
-    @{Name = "Pester"; Description = "Tests"}
-)
-
-foreach ($module in $modules) {
-    $existing = Get-Module -Name $module.Name -ListAvailable -ErrorAction SilentlyContinue
-    if ($existing -and !$Force) {
-        Write-Host "OK $($module.Name) : deja installe" -ForegroundColor Green
-    } else {
-        Write-Host "Installation de $($module.Name)..." -ForegroundColor Yellow
-        try {
-            Install-Module -Name $module.Name -Scope CurrentUser -Force -AllowClobber -ErrorAction Stop
-            Write-Host "OK $($module.Name) installe" -ForegroundColor Green
-        }
-        catch {
-            Write-Host "ERREUR : $($_.Exception.Message)" -ForegroundColor Red
-        }
-    }
-}
-'@
-$majDependancesPath = Join-Path $Chemin "scripts-utilitaires\Maj-Dependances.ps1"
-$majDependancesContent | Out-File -FilePath $majDependancesPath -Encoding UTF8
-Write-Host "  OK scripts-utilitaires\Maj-Dependances.ps1" -ForegroundColor Gray
-
-# 3.6 Script Backup-Etude.ps1
-$backupContent = @'
-<#
-.SYNOPSIS
-    Backup-Etude.ps1 - Sauvegarde complete du projet
-#>
-
-param([string]$Destination = "$env:USERPROFILE\Backups\powershell-ia-roadmap")
-
-$date = Get-Date -Format "yyyy-MM-dd_HH-mm"
-$backupPath = "$Destination\_backup_$date"
-
-if (!(Test-Path $Destination)) {
-    New-Item -Path $Destination -ItemType Directory -Force | Out-Null
-}
-
-$sourcePath = Split-Path $PSScriptRoot
-try {
-    Compress-Archive -Path "$sourcePath\*" -DestinationPath "$backupPath.zip" -ErrorAction Stop
-    Write-Host "OK Sauvegarde reussie : $backupPath.zip" -ForegroundColor Green
-}
-catch {
-    Write-Host "ERREUR : $($_.Exception.Message)" -ForegroundColor Red
-}
-'@
-$backupPathScript = Join-Path $Chemin "scripts-utilitaires\Backup-Etude.ps1"
-$backupContent | Out-File -FilePath $backupPathScript -Encoding UTF8
-Write-Host "  OK scripts-utilitaires\Backup-Etude.ps1" -ForegroundColor Gray
-
-# =============================================
-# 4. FINALISATION
-# =============================================
-Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "  OK PROJET INSTALLE AVEC SUCCES !" -ForegroundColor Green
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Projet installe dans : $Chemin" -ForegroundColor White
-Write-Host ""
-Write-Host "PROCHAINES ETAPES :" -ForegroundColor Yellow
-Write-Host "  1. Ouvrez VS Code : code $Chemin" -ForegroundColor White
-Write-Host "  2. Activez votre profil" -ForegroundColor White
-Write-Host "  3. Commencez les cours !" -ForegroundColor White
-Write-Host ""
-
-Start-Process "explorer.exe" $Chemin
-
-# Fonction de nettoyage et organisation
-function Invoke-OrganisationFichiers {
-    Write-Host "`n📂 Organisation automatique des fichiers..." -ForegroundColor Cyan
-    
-    # Règles de correspondance
-    $regles = @{
-        '^base_' = '01-fondamentaux'
-        '^avance_' = '02-avancees'
-        '^ia_' = '03-ia-integration'
-        '^projet_' = '04-projets-experts'
-        '^util_' = 'scripts-utilitaires'
-        '^lib_' = 'library'
-        '^data_' = 'data'
-        '^doc_' = 'docs'
-        '^corr_' = 'corrections'
-        '\.ps1$' = 'scripts-utilitaires'
-        '\.py$' = 'scripts-utilitaires'
-    }
-    
-    Get-ChildItem -File -Exclude '*.git*', '*.env', 'README.md', 'Setup-*.ps1' | ForEach-Object {
-        foreach ($regle in $regles.Keys) {
-            if ($_.Name -match $regle) {
-                $dest = $regles[$regle]
-                if (-not (Test-Path $dest)) { New-Item -Path $dest -ItemType Directory -Force | Out-Null }
-                Move-Item -Path $_.FullName -Destination "$dest/" -Force -ErrorAction SilentlyContinue
-                Write-Host "  → $($_.Name) ➜ $dest/" -ForegroundColor Green
-                break
-            }
-        }
-    }
-}
-
-# Ajouter à la fin du Setup-projet.ps1
-Invoke-OrganisationFichiers
