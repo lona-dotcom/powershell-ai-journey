@@ -13,14 +13,3 @@ library/ : Modules et fonctions reutilisables
 data/ : Logs, exports, fichiers de test
 docs/ : Documentation generale
 scripts-utilitaires/ : Scripts d'automatisation du projet
-
-## Pre-requis
-
-- PowerShell 7.3+
-- Visual Studio Code avec l'extension PowerShell
-- Git
-- Cle API OpenAI pour les projets IA
-
-## Securite
-
-Ne versionnez JAMAIS vos cles API ou secrets. Utilisez le fichier .env pour stocker ces informations en local.
