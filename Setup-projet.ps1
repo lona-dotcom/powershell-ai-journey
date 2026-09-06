@@ -352,3 +352,38 @@ Write-Host "  3. Commencez les cours !" -ForegroundColor White
 Write-Host ""
 
 Start-Process "explorer.exe" $Chemin
+
+# Fonction de nettoyage et organisation
+function Invoke-OrganisationFichiers {
+    Write-Host "`n📂 Organisation automatique des fichiers..." -ForegroundColor Cyan
+    
+    # Règles de correspondance
+    $regles = @{
+        '^base_' = '01-fondamentaux'
+        '^avance_' = '02-avancees'
+        '^ia_' = '03-ia-integration'
+        '^projet_' = '04-projets-experts'
+        '^util_' = 'scripts-utilitaires'
+        '^lib_' = 'library'
+        '^data_' = 'data'
+        '^doc_' = 'docs'
+        '^corr_' = 'corrections'
+        '\.ps1$' = 'scripts-utilitaires'
+        '\.py$' = 'scripts-utilitaires'
+    }
+    
+    Get-ChildItem -File -Exclude '*.git*', '*.env', 'README.md', 'Setup-*.ps1' | ForEach-Object {
+        foreach ($regle in $regles.Keys) {
+            if ($_.Name -match $regle) {
+                $dest = $regles[$regle]
+                if (-not (Test-Path $dest)) { New-Item -Path $dest -ItemType Directory -Force | Out-Null }
+                Move-Item -Path $_.FullName -Destination "$dest/" -Force -ErrorAction SilentlyContinue
+                Write-Host "  → $($_.Name) ➜ $dest/" -ForegroundColor Green
+                break
+            }
+        }
+    }
+}
+
+# Ajouter à la fin du Setup-projet.ps1
+Invoke-OrganisationFichiers
