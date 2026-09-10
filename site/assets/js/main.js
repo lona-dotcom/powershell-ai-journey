@@ -46,6 +46,21 @@ if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
     const isOpen = navigation.classList.toggle('is-open');
     menuButton.setAttribute('aria-expanded', String(isOpen));
+
+    if (isOpen) {
+      const firstLink = navigation.querySelector('a');
+      if (firstLink) firstLink.focus();
+    } else {
+      menuButton.focus();
+    }
+  });
+
+  navigation.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navigation.classList.contains('is-open')) {
+      navigation.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.focus();
+    }
   });
 }
 
