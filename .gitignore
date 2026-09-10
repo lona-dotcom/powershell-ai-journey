@@ -9,6 +9,8 @@ api_key.txt
 config_securisee.ps1
 
 # Dossiers de donnees
+site/_perso/
+.env
 data/logs/
 data/exports/
 data/samples/
