@@ -3,15 +3,15 @@ const navigation = document.querySelector('.nav-list');
 
 const languageLinks = {
   fr: {
-    label: 'Langue',
+    label: 'Sélecteur de langue',
     paths: { fr: 'fr', de: 'de', en: 'en' }
   },
   de: {
-    label: 'Sprache',
+    label: 'Sprachauswahl',
     paths: { fr: 'fr', de: 'de', en: 'en' }
   },
   en: {
-    label: 'Language',
+    label: 'Language selector',
     paths: { fr: 'fr', de: 'de', en: 'en' }
   }
 };
@@ -33,7 +33,8 @@ const localizedPageName = legalPageMap[pageName] || { fr: pageName, de: pageName
 if (navigation && !navigation.querySelector('.language-switcher')) {
   const languageSwitcher = document.createElement('li');
   languageSwitcher.className = 'language-switcher';
-  languageSwitcher.innerHTML = `<span class="language-label">${languageConfig.label}</span><ul class="language-list">${Object.entries(languageConfig.paths).map(([language, directory]) => {
+  languageSwitcher.setAttribute('aria-label', languageConfig.label);
+  languageSwitcher.innerHTML = `<span class="language-label">${languageConfig.label}</span><ul class="language-list" aria-label="${languageConfig.label}">${Object.entries(languageConfig.paths).map(([language, directory]) => {
     const target = localizedPageName[language];
     const href = target === 'index.html' ? `../${directory}/` : `../${directory}/${target}`;
     const current = language === currentLanguage ? ' aria-current="true"' : '';
