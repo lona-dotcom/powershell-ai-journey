@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-  <title id="title">Camille Martin, data analyst freelance</title>
-  <desc id="description">Des données claires pour des décisions concrètes.</desc>
-  <rect width="1200" height="630" fill="#102a43"/>
-  <rect x="72" y="72" width="1056" height="486" rx="20" fill="#ffffff"/>
-  <path d="M150 442h120V310h120v132h120V226h120v216h120V170h120v272h120" fill="none" stroke="#b54708" stroke-width="24"/>
-  <text x="150" y="170" fill="#102a43" font-family="Georgia, serif" font-size="54" font-weight="700">Camille Martin</text>
-  <text x="150" y="228" fill="#52606d" font-family="Arial, sans-serif" font-size="30">Data analyst freelance</text>
-</svg>
