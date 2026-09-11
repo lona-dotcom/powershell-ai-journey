@@ -669,6 +669,16 @@ textarea {
   }
 }
 
+/* Icônes Lucide SVG */
+.lucide {
+  display: inline-block;
+  vertical-align: -0.18em;
+  width: 1.15em;
+  height: 1.15em;
+  stroke-width: 2;
+  margin-right: 0.35rem;
+}
+
 /* Réduction des animations pour les utilisateurs qui le demandent */
 @media (prefers-reduced-motion: reduce) {
   html {
