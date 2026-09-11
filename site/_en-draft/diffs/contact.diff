@@ -1,0 +1,96 @@
+diff --git "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-contact.txt" "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-contact.txt"
+index 4cbc79f..bfee126 100644
+--- "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-contact.txt"
++++ "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-contact.txt"
+@@ -1,54 +1,54 @@
+-Contact | Camille Martin, data analyst freelance
+-Aller au contenu
++Contact | Camille Martin, freelance data analyst
++Skip to content
+ Camille Martin
+ Menu
+-Accueil
+-À propos
++Home
++About
+ Services
+-Projets
+-Compétences
+-Témoignages
++Projects
++Skills
++Testimonials
+ Contact
+-Sélecteur de langue
++Language selector
+ FR
+ DE
+ EN
+ Contact
+-Discutons de votre projet — sans engagement
+-Quelques lignes suffisent pour me donner le contexte. Je vous répondrai avec une première orientation claire.
+-Un échange simple et direct.
+-Votre demande reste confidentielle et ne vous engage à rien.
+-Votre besoin
+-Parlez-moi de votre projet
+-Nom
++Let’s discuss your project — with no obligation
++A few lines are enough to give me the context. I will reply with a clear first orientation.
++A simple, direct conversation.
++Your enquiry remains confidential and places you under no obligation.
++Your requirement
++Tell me about your project
++Name
+ Email
+-Description du besoin
+-Envoyer ma demande
+-⏱ Réponse sous 24h · 🔒 Confidentialité garantie
+-Prendre rendez-vous
+-Un premier échange, simplement
+-La réservation en ligne sera ajoutée prochainement. En attendant, envoyez-moi votre besoin via le formulaire et je vous répondrai sous 24h.
++Description of requirement
++Send my enquiry
++⏱ Response within 24 hours · 🔒 Confidentiality guaranteed
++Book a meeting
++A first conversation, simply
++Online booking will be added shortly. In the meantime, send your requirement via the form and I will reply within 24 hours.
+ -->
+-Autres moyens de contact
+-Restons en contact
+-Email professionnel
++Other ways to get in touch
++Let’s stay in contact
++Professional email
+ bonjour@camille-martin.example
+ LinkedIn
+-Retrouvez-moi sur LinkedIn
++Find me on LinkedIn
+ GitHub
+-Consultez mes projets GitHub
+-Confidentialité
+-Un accord de confidentialité (NDA) est disponible sur demande.
+-Vos données
+-Une demande traitée avec discrétion
+-Les informations transmises servent uniquement à répondre à votre demande. Consultez la
+-politique de confidentialité
+-pour connaître vos droits et les modalités de traitement.
++View my GitHub projects
++Confidentiality
++A non-disclosure agreement (NDA) is available on request.
++Your data
++An enquiry handled with discretion
++Information you send is used only to respond to your enquiry. Read the
++privacy policy
++for your rights and how processing works.
+ Camille Martin
+-Data analyst freelance · Réponse sous 24h · Confidentialité garantie
++Freelance data analyst · Response within 24 hours · Confidentiality guaranteed · UK GDPR
+ ©
+ Camille Martin
+-Mentions légales
+-Confidentialité
++Legal notice
++Privacy
+ LinkedIn
+ GitHub
+\ No newline at end of file

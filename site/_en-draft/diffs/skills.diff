@@ -1,0 +1,167 @@
+diff --git "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-skills.txt" "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-skills.txt"
+index 96a6ffd..e60606f 100644
+--- "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-skills.txt"
++++ "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-skills.txt"
+@@ -1,94 +1,94 @@
+-Compétences | Camille Martin, data analyst freelance
+-Aller au contenu
++Skills | Camille Martin, freelance data analyst
++Skip to content
+ Camille Martin
+ Menu
+-Accueil
+-À propos
++Home
++About
+ Services
+-Projets
+-Compétences
+-Témoignages
++Projects
++Skills
++Testimonials
+ Contact
+-Sélecteur de langue
++Language selector
+ FR
+ DE
+ EN
+-Compétences
+-Des compétences techniques au service de vos décisions
+-Je mobilise les bons outils et les bonnes méthodes pour transformer vos données en analyses fiables, compréhensibles et directement utiles.
+-Une expertise adaptée à votre contexte.
+-Chaque méthode est choisie selon vos données, vos contraintes opérationnelles et les décisions à éclairer.
+-Expertise technique
+-Des compétences reliées à des cas d’usage concrets
+-Mon objectif est de produire des résultats exploitables, avec une méthode claire et des livrables réutilisables par vos équipes.
+-Langages
++Skills
++Technical skills in the service of your decisions
++I use the right tools and methods to turn your data into reliable, understandable analyses that are immediately useful.
++Expertise adapted to your context.
++Every method is chosen according to your data, operational constraints and the decisions to be informed.
++Technical expertise
++Skills linked to concrete use cases
++My aim is to produce usable results, with a clear method and deliverables your teams can reuse.
++Languages
+ Python
+-: automatiser le nettoyage de fichiers et produire des analyses reproductibles.
++: automate file cleaning and produce reproducible analyses.
+ R
+-: explorer des données et construire des analyses statistiques documentées.
++: explore data and build documented statistical analyses.
+ SQL
+-: extraire et consolider les données utiles depuis une base relationnelle.
++: extract and consolidate useful data from a relational database.
+ Visualisation
+ Tableau
+-: créer un tableau de bord de suivi des ventes par canal.
++: create a dashboard to track sales by channel.
+ Power BI
+-: centraliser les indicateurs commerciaux et opérationnels.
++: centralise commercial and operational indicators.
+ Looker
+-: partager des métriques cohérentes entre les équipes.
+-Manipulation des données
++: share consistent metrics across teams.
++Data manipulation
+ Pandas
+-: nettoyer, transformer et agréger un historique de transactions.
+-Excel avancé
+-: fiabiliser un reporting existant avec formules et contrôles.
++: clean, transform and aggregate a transaction history.
++Advanced Excel
++: make existing reporting reliable with formulae and checks.
+ ETL
+-: organiser l’importation de sources hétérogènes dans un flux documenté.
+-Statistiques et modélisation
+-Statistiques descriptives
+-: identifier les tendances et anomalies d’une activité.
+-Tests statistiques
+-: évaluer la robustesse d’une différence entre deux segments.
+-Modélisation prédictive
+-: estimer un risque de désabonnement à partir de données historiques.
+-Compétences transverses
++: organise the import of heterogeneous sources into a documented flow.
++Statistics and modelling
++Descriptive statistics
++: identify trends and anomalies in an activity.
++Statistical tests
++: assess how robust a difference between two segments is.
++Predictive modelling
++: estimate a cancellation risk from historical data.
++Cross-cutting skills
+ Communication
+-: présenter les résultats aux décideurs et aux équipes métier.
+-Vulgarisation
+-: expliquer une méthode et ses limites sans jargon inutile.
+-Gestion de projet
+-: cadrer les étapes, les livrables et les priorités d’une mission.
+-Boîte à outils
+-Des outils maîtrisés pour chaque étape de l’analyse
++: present results to decision-makers and business teams.
++Plain language
++: explain a method and its limitations without unnecessary jargon.
++Project management
++: frame the stages, deliverables and priorities of an engagement.
++Toolbox
++Tools mastered at every stage of the analysis
+ Python &amp; Jupyter
+-Préparer un jeu de données, documenter les transformations et produire une analyse reproductible.
++Prepare a dataset, document transformations and produce a reproducible analysis.
+ SQL
+-Interroger les données sources et construire une base fiable pour les indicateurs.
++Query source data and build a reliable basis for indicators.
+ RStudio
+-Réaliser une exploration statistique et présenter clairement les résultats d’une étude.
++Carry out a statistical exploration and present the findings of a study clearly.
+ Tableau
+-Concevoir une vue interactive pour suivre les performances et repérer les évolutions.
++Design an interactive view to track performance and spot changes.
+ Power BI
+-Assembler plusieurs sources et fournir un reporting partagé aux équipes.
+-Excel avancé
+-Améliorer un fichier métier existant avec des contrôles, des recherches et des synthèses fiables.
+-Au-delà des outils
+-Une collaboration simple et efficace
+-Écoute
+-Je commence par comprendre votre activité, vos contraintes et la décision que l’analyse doit soutenir.
+-Pédagogie
+-Je rends les résultats accessibles afin que chaque interlocuteur puisse les comprendre et les utiliser.
+-Rigueur
+-Je vérifie les sources, explicite les hypothèses et signale les limites avant toute recommandation.
+-Autonomie
+-Je documente les livrables et transmets les bonnes pratiques pour faciliter leur reprise par vos équipes.
+-Parlons de votre besoin
+-Vous avez une question data à éclairer ?
+-Décrivez-moi votre contexte et vos objectifs. Nous identifierons ensemble l’approche la plus adaptée.
+-Me contacter
++Bring several sources together and provide shared reporting for teams.
++Advanced Excel
++Improve an existing business file with checks, lookups and reliable summaries.
++Beyond the tools
++A simple, effective collaboration
++Listening
++I start by understanding your activity, constraints and the decision the analysis must support.
++Teaching
++I make results accessible so every stakeholder can understand and use them.
++Rigour
++I check sources, set out assumptions and flag limitations before any recommendation.
++Independence
++I document deliverables and share good practice so your teams can take them over.
++Let’s talk about your requirement
++Do you have a data question to clarify?
++Describe your context and objectives. Together we will identify the most suitable approach.
++Get in touch
+ Camille Martin
+-Data analyst freelance · Réponse sous 24h · Confidentialité garantie
++Freelance data analyst · Response within 24 hours · Confidentiality guaranteed · UK GDPR
+ ©
+ Camille Martin
+-Mentions légales
+-Confidentialité
++Legal notice
++Privacy
+ LinkedIn
+ GitHub
+\ No newline at end of file

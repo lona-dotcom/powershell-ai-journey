@@ -1,0 +1,204 @@
+diff --git "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-projects.txt" "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-projects.txt"
+index 73b839d..4b9f55a 100644
+--- "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-projects.txt"
++++ "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-projects.txt"
+@@ -1,118 +1,118 @@
+-Projets data | Camille Martin, data analyst freelance
+-Aller au contenu
++Data projects | Camille Martin, freelance data analyst
++Skip to content
+ Camille Martin
+ Menu
+-Accueil
+-À propos
++Home
++About
+ Services
+-Projets
+-Compétences
+-Témoignages
++Projects
++Skills
++Testimonials
+ Contact
+-Sélecteur de langue
++Language selector
+ FR
+ DE
+ EN
+-Études de cas
+-Des projets qui transforment les données en décisions
+-Des exemples de missions data orientées métier, avec une méthode claire, des livrables exploitables et des résultats mesurables.
+-Une analyse utile commence par une bonne question.
+-Chaque projet relie les données disponibles à une décision concrète pour votre activité.
+-Projets sélectionnés
+-Des problématiques métier, des réponses data
+-[Visuel placeholder : dashboard e-commerce]
+-Visuel à remplacer par une capture anonymisée du dashboard.
+-E-commerce · PME
+-Dashboard e-commerce : pilotage des ventes en temps réel
++Case studies
++Projects that turn data into decisions
++Examples of business-focused data engagements, with a clear method, usable deliverables and measurable results.
++Useful analysis starts with the right question.
++Every project connects the data available to a concrete decision for your activity.
++Selected projects
++Business problems, data answers
++[Visual placeholder: e-commerce dashboard]
++Visual to be replaced with an anonymised dashboard screenshot.
++E-commerce · SME
++E-commerce dashboard: real-time sales steering
+ Challenge
+-Les données de ventes étaient réparties entre plusieurs sources. L'équipe suivait ses indicateurs avec retard et manquait de visibilité sur les produits et canaux les plus performants.
++Sales data was spread across several sources. The team tracked indicators with a delay and lacked visibility of the best-performing products and channels.
+ Solution
+-Consolidation des données avec SQL, préparation des indicateurs avec Python et création d'un dashboard Tableau avec filtres par période, canal, produit et zone géographique.
+-Résultats
+-Réduction de 30 % des délais
+-de reporting.
+-15 % de marge récupérable
+-sur les références sous-performantes.
+-Une vision partagée des ventes pour les équipes commerciales.
+-Outils et technologies
++Data consolidation with SQL, preparation of indicators with Python and creation of a Tableau dashboard with filters by period, channel, product and geographic area.
++Results
++30% reduction in reporting timescales
++.
++15% recoverable margin
++on underperforming product lines.
++A shared view of sales for commercial teams.
++Tools and technologies
+ SQL
+ Python
+ Tableau
+ Excel
+-[Visuel placeholder : graphique churn]
+-Visuel à remplacer par un graphique de segmentation anonymisé.
+-SaaS · Entreprise en croissance
+-Analyse churn : identifier les clients à risque
++[Visual placeholder: churn chart]
++Visual to be replaced with an anonymised segmentation chart.
++SaaS · Growing company
++Churn analysis: identifying customers at risk
+ Challenge
+-Le taux de résiliation augmentait sans cause clairement identifiée. L'entreprise souhaitait repérer les signaux faibles avant le départ des clients.
++The cancellation rate was rising without a clearly identified cause. The company wanted to detect weak signals before customers left.
+ Solution
+-Analyse exploratoire avec Python, segmentation des clients selon l'usage du produit, l'ancienneté et les interactions avec le support, puis construction d'un score de risque interprétable.
+-Résultats
+-22 % des comptes à risque identifiés
+-avant renouvellement.
+-Réduction de 12 % du churn ciblé
+-après activation des actions de rétention.
+-Un plan d'action priorisé pour l'équipe customer success.
+-Outils et technologies
++Exploratory analysis with Python, customer segmentation by product usage, tenure and support interactions, then construction of an interpretable risk score.
++Results
++22% of at-risk accounts identified
++before renewal.
++12% reduction in targeted churn
++after retention actions were activated.
++A prioritised action plan for the customer success team.
++Tools and technologies
+ Python
+ pandas
+ SQL
+ Jupyter
+-[Visuel placeholder : rapport qualité des données]
+-Visuel à remplacer par un extrait du rapport de qualité.
+-Services B2B · Base clients
+-Nettoyage et fiabilisation d'une base client de 50 000 lignes
++[Visual placeholder: data quality report]
++Visual to be replaced with an extract from the quality report.
++B2B services · Customer database
++Cleaning and making a 50,000-row customer database reliable
+ Challenge
+-La base client contenait des doublons, des formats incohérents et des informations incomplètes. Les équipes ne pouvaient pas mesurer fiablement la performance commerciale.
++The customer database contained duplicates, inconsistent formats and incomplete information. Teams could not measure commercial performance reliably.
+ Solution
+-Profilage de la base, normalisation des champs, détection des doublons avec Python et création de règles de contrôle documentées pour les prochains imports.
+-Résultats
+-Réduction de 18 % des doublons
+-détectés.
+-96 % des fiches rendues exploitables
+-pour le reporting.
+-Un processus reproductible de contrôle qualité.
+-Outils et technologies
++Profiling of the database, field normalisation, duplicate detection with Python and creation of documented control rules for future imports.
++Results
++18% reduction in duplicates
++detected.
++96% of records made usable
++for reporting.
++A reproducible quality-control process.
++Tools and technologies
+ Python
+ pandas
+ SQL
+ Excel
+-[Visuel placeholder : dashboard marketing]
+-Visuel à remplacer par une vue anonymisée des performances.
+-Marketing · Marque digitale
+-Mesure de la performance des campagnes d'acquisition
++[Visual placeholder: marketing dashboard]
++Visual to be replaced with an anonymised performance view.
++Marketing · Digital brand
++Measuring the performance of acquisition campaigns
+ Challenge
+-Les investissements publicitaires étaient suivis par canal, mais l'entreprise ne disposait pas d'une lecture consolidée du coût d'acquisition et de la contribution réelle de chaque campagne.
++Advertising investment was tracked by channel, but the company had no consolidated view of acquisition cost and the real contribution of each campaign.
+ Solution
+-Unification des données publicitaires et commerciales, définition d'indicateurs communs, puis création d'un reporting automatisé avec SQL et Tableau.
+-Résultats
+-25 % de temps économisé
+-sur le reporting hebdomadaire.
+-14 % de budget réalloué
+-vers les campagnes les plus rentables.
+-Une lecture homogène du parcours d'acquisition.
+-Outils et technologies
++Unification of advertising and commercial data, definition of shared indicators, then creation of automated reporting with SQL and Tableau.
++Results
++25% of time saved
++on weekly reporting.
++14% of budget reallocated
++to the most profitable campaigns.
++A consistent reading of the acquisition journey.
++Tools and technologies
+ SQL
+ Tableau
+ Google Analytics
+ Python
+-Méthode
+-Challenge &gt; Solution &gt; Résultats
++Method
++Challenge &gt; Solution &gt; Results
+ Challenge
+-Nous clarifions la question métier, les contraintes et la décision que les données doivent aider à prendre.
++We clarify the business question, the constraints and the decision the data must help you take.
+ Solution
+-Je sélectionne les sources, les méthodes et les outils adaptés, puis je construis une analyse compréhensible et reproductible.
+-Résultats
+-Les conclusions sont traduites en indicateurs, recommandations et actions directement utilisables par vos équipes.
+-Votre projet
+-Transformons votre problématique data en plan d'action
+-Partagez votre contexte, vos objectifs et vos données disponibles. Nous identifierons ensemble la prochaine décision à éclairer.
+-Parler de mon projet
++I select the sources, methods and tools that fit, then build an analysis that is understandable and reproducible.
++Results
++Conclusions are translated into indicators, recommendations and actions your teams can use immediately.
++Your project
++Let’s turn your data challenge into an action plan
++Share your context, objectives and available data. Together we will identify the next decision to illuminate.
++Discuss my project
+ Camille Martin
+-Data analyst freelance · Réponse sous 24h · Confidentialité garantie
++Freelance data analyst · Response within 24 hours · Confidentiality guaranteed · UK GDPR
+ ©
+ Camille Martin
+-Mentions légales
+-Confidentialité
++Legal notice
++Privacy
+ LinkedIn
+ GitHub
+\ No newline at end of file

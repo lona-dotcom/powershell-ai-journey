@@ -1,0 +1,58 @@
+diff --git "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-legal-notice.txt" "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-legal-notice.txt"
+index b7628e3..93a8951 100644
+--- "a/C:\\Users\\User\\AppData\\Local\\Temp\\fr-legal-notice.txt"
++++ "b/C:\\Users\\User\\AppData\\Local\\Temp\\en-legal-notice.txt"
+@@ -1,32 +1,32 @@
+-Mentions légales | Camille Martin
+-Aller au contenu
++Legal notice | Camille Martin
++Skip to content
+ Camille Martin
+ Menu
+-Accueil
+-À propos
++Home
++About
+ Services
+-Projets
+-Compétences
+-Témoignages
++Projects
++Skills
++Testimonials
+ Contact
+-Sélecteur de langue
++Language selector
+ FR
+ DE
+ EN
+-Informations légales
+-Mentions légales
+-Éditeur du site
+-Camille Martin — Data analyst freelance
+-Adresse : à compléter
+-E-mail : bonjour@camille-martin.example
+-Hébergement
+-Prestataire d'hébergement : à compléter.
+-Ces informations doivent être complétées avec les coordonnées exactes avant publication.
++Legal information
++Legal notice
++Website publisher
++Camille Martin — Freelance data analyst
++Address: to be completed
++Email: bonjour@camille-martin.example
++Hosting
++Hosting provider: to be completed.
++These details must be completed with the exact contact information before publication.
+ Camille Martin
+-Data analyst freelance · Réponse sous 24h · Confidentialité garantie
++Freelance data analyst · Response within 24 hours · Confidentiality guaranteed · UK GDPR
+ ©
+ Camille Martin
+-Mentions légales
+-Confidentialité
++Legal notice
++Privacy
+ LinkedIn
+ GitHub
+\ No newline at end of file
