@@ -65,7 +65,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 100%;
-  scroll-padding-top: 5rem;
 }
 
 body {
@@ -328,32 +327,8 @@ hr {
 
 /* En-tête et navigation */
 .site-header {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   border-bottom: 1px solid var(--color-neutral-300);
-  background-color: var(--color-white);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 300ms ease-out;
-}
-
-@supports (animation-timeline: scroll()) {
-  @keyframes header-scroll-shadow {
-    from {
-      box-shadow: none;
-    }
-    to {
-      box-shadow: var(--shadow-md);
-    }
-  }
-
-  .site-header {
-    box-shadow: none;
-    animation: header-scroll-shadow linear both;
-    animation-timeline: scroll();
-    animation-range: 0px 50px;
-  }
+  background: var(--color-white);
 }
 
 .navbar {
@@ -377,12 +352,6 @@ hr {
 
 .brand:hover {
   color: var(--color-secondary-700);
-}
-
-@media (max-width: 480px) {
-  .brand {
-    font-size: 1.05rem;
-  }
 }
 
 .menu-toggle {
