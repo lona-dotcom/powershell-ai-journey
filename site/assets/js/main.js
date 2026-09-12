@@ -67,16 +67,3 @@ if (menuButton && navigation) {
 
 const year = document.querySelector('[data-current-year]');
 if (year) year.textContent = new Date().getFullYear();
-
-function initLucideIcons() {
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
-  }
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initLucideIcons);
-} else {
-  initLucideIcons();
-}
-
