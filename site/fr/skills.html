@@ -54,14 +54,14 @@
 	</header>
 
 	<main id="main-content">
-		<section id="skills-hero" class="hero" aria-labelledby="skills-title">
-			<div>
+		<section id="skills-hero" class="skills-hero-section" aria-labelledby="skills-title">
+			<div class="skills-hero-content">
 				<p class="eyebrow">Compétences</p>
 				<h1 id="skills-title">Des compétences techniques au service de vos décisions</h1>
 				<p class="lead">Je mobilise les bons outils et les bonnes méthodes pour transformer vos données en analyses fiables, compréhensibles et directement utiles.</p>
 			</div>
 
-			<aside class="hero-note" aria-label="Approche professionnelle">
+			<aside class="skills-highlight-card" aria-label="Approche professionnelle">
 				<strong>Une expertise adaptée à votre contexte.</strong>
 				<p>Chaque méthode est choisie selon vos données, vos contraintes opérationnelles et les décisions à éclairer.</p>
 			</aside>
@@ -74,49 +74,34 @@
 				<p>Mon objectif est de produire des résultats exploitables, avec une méthode claire et des livrables réutilisables par vos équipes.</p>
 			</div>
 
-			<div class="grid">
-				<article class="card">
-					<h3>Langages</h3>
-					<ul>
-						<li><strong>Python</strong> : automatiser le nettoyage de fichiers et produire des analyses reproductibles.</li>
-						<li><strong>R</strong> : explorer des données et construire des analyses statistiques documentées.</li>
-						<li><strong>SQL</strong> : extraire et consolider les données utiles depuis une base relationnelle.</li>
+			<div class="grid skills-benefits-grid">
+				<article class="card skills-benefit-card skills-benefit-card--automation">
+					<div class="skills-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 1-12 4.9"/></svg></div>
+					<h3>Automatisation &amp; Fiabilité</h3>
+					<ul class="skills-benefit-list">
+						<li><strong>Python, R et SQL</strong> : automatiser, explorer et consolider les données.</li>
+						<li><strong>Pandas</strong> : nettoyer, transformer et agréger les historiques.</li>
+						<li><strong>Excel avancé &amp; ETL</strong> : fiabiliser les reportings et structurer les flux.</li>
 					</ul>
 				</article>
 
-				<article class="card">
-					<h3>Visualisation</h3>
-					<ul>
-						<li><strong>Tableau</strong> : créer un tableau de bord de suivi des ventes par canal.</li>
-						<li><strong>Power BI</strong> : centraliser les indicateurs commerciaux et opérationnels.</li>
-						<li><strong>Looker</strong> : partager des métriques cohérentes entre les équipes.</li>
+				<article class="card skills-benefit-card skills-benefit-card--decision">
+					<div class="skills-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 2 5-6"/><path d="M15 7h3v3"/></svg></div>
+					<h3>Visualisation &amp; Prise de décision</h3>
+					<ul class="skills-benefit-list">
+						<li><strong>Tableau, Power BI et Looker</strong> : rendre les indicateurs lisibles et partagés.</li>
+						<li><strong>Statistiques descriptives</strong> : identifier les tendances et anomalies.</li>
+						<li><strong>Tests et modélisation prédictive</strong> : éclairer les risques et les arbitrages.</li>
 					</ul>
 				</article>
 
-				<article class="card">
-					<h3>Manipulation des données</h3>
-					<ul>
-						<li><strong>Pandas</strong> : nettoyer, transformer et agréger un historique de transactions.</li>
-						<li><strong>Excel avancé</strong> : fiabiliser un reporting existant avec formules et contrôles.</li>
-						<li><strong>ETL</strong> : organiser l’importation de sources hétérogènes dans un flux documenté.</li>
-					</ul>
-				</article>
-
-				<article class="card">
-					<h3>Statistiques et modélisation</h3>
-					<ul>
-						<li><strong>Statistiques descriptives</strong> : identifier les tendances et anomalies d’une activité.</li>
-						<li><strong>Tests statistiques</strong> : évaluer la robustesse d’une différence entre deux segments.</li>
-						<li><strong>Modélisation prédictive</strong> : estimer un risque de désabonnement à partir de données historiques.</li>
-					</ul>
-				</article>
-
-				<article class="card">
-					<h3>Compétences transverses</h3>
-					<ul>
+				<article class="card skills-benefit-card skills-benefit-card--transmission">
+					<div class="skills-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M8.5 14.5C7.6 13.7 7 12.5 7 11a5 5 0 0 1 10 0c0 1.5-.6 2.7-1.5 3.5-.7.6-1.2 1.2-1.4 2.1H9.9c-.2-.9-.7-1.5-1.4-2.1Z"/><path d="M12 2v1M4.9 4.9l.7.7M19.1 4.9l-.7.7"/></svg></div>
+					<h3>Accompagnement &amp; Transmission</h3>
+					<ul class="skills-benefit-list">
 						<li><strong>Communication</strong> : présenter les résultats aux décideurs et aux équipes métier.</li>
-						<li><strong>Vulgarisation</strong> : expliquer une méthode et ses limites sans jargon inutile.</li>
-						<li><strong>Gestion de projet</strong> : cadrer les étapes, les livrables et les priorités d’une mission.</li>
+						<li><strong>Vulgarisation</strong> : expliquer les méthodes sans jargon inutile.</li>
+						<li><strong>Gestion de projet</strong> : cadrer les étapes, livrables et priorités.</li>
 					</ul>
 				</article>
 			</div>
@@ -128,35 +113,47 @@
 				<h2 id="tools-title">Des outils maîtrisés pour chaque étape de l’analyse</h2>
 			</div>
 
-			<div class="grid">
-				<article class="card">
-					<h3>Python &amp; Jupyter</h3>
+			<div class="grid tools-cards-grid">
+				<article class="card tool-card">
+					<div class="tool-card-heading"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4c-2 0-3 1.4-3 3s1 3 3 3h2c2 0 3 1.4 3 3s-1 3-3 3H7c-2 0-3 1.4-3 3s1 3 3 3"/><path d="M17 4c2 0 3 1.4 3 3s-1 3-3 3h-2c-2 0-3 1.4-3 3s1 3 3 3h2c2 0 3 1.4 3 3s-1 3-3 3"/></svg></span><h3>Python &amp; Jupyter</h3></div>
 					<p>Préparer un jeu de données, documenter les transformations et produire une analyse reproductible.</p>
+					<div class="tool-proficiency"><div class="tool-proficiency-label"><span>Expert</span><strong>90%</strong></div><div class="tool-progress" role="progressbar" aria-label="Niveau Python et Jupyter : Expert" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90"><span style="--tool-level: 90%"></span></div></div>
+					<p class="tool-example"><strong>Exemple concret :</strong> Automatisation du nettoyage de fichiers CSV de 100k lignes.</p>
 				</article>
 
-				<article class="card">
-					<h3>SQL</h3>
+				<article class="card tool-card">
+					<div class="tool-card-heading"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></span><h3>SQL</h3></div>
 					<p>Interroger les données sources et construire une base fiable pour les indicateurs.</p>
+					<div class="tool-proficiency"><div class="tool-proficiency-label"><span>Expert</span><strong>90%</strong></div><div class="tool-progress" role="progressbar" aria-label="Niveau SQL : Expert" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90"><span style="--tool-level: 90%"></span></div></div>
+					<p class="tool-example"><strong>Exemple concret :</strong> Consolidation de ventes multi-sources pour un reporting quotidien.</p>
 				</article>
 
-				<article class="card">
-					<h3>RStudio</h3>
+				<article class="card tool-card">
+					<div class="tool-card-heading"><span class="tool-icon tool-icon--letter" aria-hidden="true">R</span><h3>RStudio</h3></div>
 					<p>Réaliser une exploration statistique et présenter clairement les résultats d’une étude.</p>
+					<div class="tool-proficiency"><div class="tool-proficiency-label"><span>Avancé</span><strong>78%</strong></div><div class="tool-progress" role="progressbar" aria-label="Niveau RStudio : Avancé" aria-valuemin="0" aria-valuemax="100" aria-valuenow="78"><span style="--tool-level: 78%"></span></div></div>
+					<p class="tool-example"><strong>Exemple concret :</strong> Analyse statistique des facteurs associés au churn client.</p>
 				</article>
 
-				<article class="card">
-					<h3>Tableau</h3>
+				<article class="card tool-card">
+					<div class="tool-card-heading"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 2 5-6"/><path d="M15 7h3v3"/></svg></span><h3>Tableau</h3></div>
 					<p>Concevoir une vue interactive pour suivre les performances et repérer les évolutions.</p>
+					<div class="tool-proficiency"><div class="tool-proficiency-label"><span>Avancé</span><strong>85%</strong></div><div class="tool-progress" role="progressbar" aria-label="Niveau Tableau : Avancé" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85"><span style="--tool-level: 85%"></span></div></div>
+					<p class="tool-example"><strong>Exemple concret :</strong> Dashboard de pilotage des ventes par canal et période.</p>
 				</article>
 
-				<article class="card">
-					<h3>Power BI</h3>
+				<article class="card tool-card">
+					<div class="tool-card-heading"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 16V8M12 16v-5M16 16V6"/></svg></span><h3>Power BI</h3></div>
 					<p>Assembler plusieurs sources et fournir un reporting partagé aux équipes.</p>
+					<div class="tool-proficiency"><div class="tool-proficiency-label"><span>Avancé</span><strong>82%</strong></div><div class="tool-progress" role="progressbar" aria-label="Niveau Power BI : Avancé" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82"><span style="--tool-level: 82%"></span></div></div>
+					<p class="tool-example"><strong>Exemple concret :</strong> Modèle de données partagé pour suivre les KPI commerciaux.</p>
 				</article>
 
-				<article class="card">
-					<h3>Excel avancé</h3>
+				<article class="card tool-card">
+					<div class="tool-card-heading"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M5 16l3-4 3 2 4-6 4 3"/><path d="M5 5h14"/></svg></span><h3>Excel avancé</h3></div>
 					<p>Améliorer un fichier métier existant avec des contrôles, des recherches et des synthèses fiables.</p>
+					<div class="tool-proficiency"><div class="tool-proficiency-label"><span>Avancé</span><strong>80%</strong></div><div class="tool-progress" role="progressbar" aria-label="Niveau Excel avancé : Avancé" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><span style="--tool-level: 80%"></span></div></div>
+					<p class="tool-example"><strong>Exemple concret :</strong> Reporting automatisé avec contrôles de qualité et synthèses métier.</p>
 				</article>
 			</div>
 		</section>
@@ -167,38 +164,24 @@
 				<h2 id="soft-skills-title">Une collaboration simple et efficace</h2>
 			</div>
 
-			<div class="grid">
-				<article class="card">
-					<h3>Écoute</h3>
-					<p>Je commence par comprendre votre activité, vos contraintes et la décision que l’analyse doit soutenir.</p>
-				</article>
-
-				<article class="card">
-					<h3>Pédagogie</h3>
-					<p>Je rends les résultats accessibles afin que chaque interlocuteur puisse les comprendre et les utiliser.</p>
-				</article>
-
-				<article class="card">
-					<h3>Rigueur</h3>
-					<p>Je vérifie les sources, explicite les hypothèses et signale les limites avant toute recommandation.</p>
-				</article>
-
-				<article class="card">
-					<h3>Autonomie</h3>
-					<p>Je documente les livrables et transmets les bonnes pratiques pour faciliter leur reprise par vos équipes.</p>
-				</article>
-			</div>
+			<ol class="collaboration-timeline">
+				<li class="collaboration-step"><div class="collaboration-marker" aria-hidden="true">1</div><div><h3>Écoute</h3><p>Comprendre votre activité, vos contraintes et la décision que l’analyse doit soutenir.</p></div></li>
+				<li class="collaboration-step"><div class="collaboration-marker" aria-hidden="true">2</div><div><h3>Pédagogie</h3><p>Rendre les résultats accessibles pour que chaque interlocuteur puisse les utiliser.</p></div></li>
+				<li class="collaboration-step"><div class="collaboration-marker" aria-hidden="true">3</div><div><h3>Rigueur</h3><p>Vérifier les sources, expliciter les hypothèses et signaler les limites.</p></div></li>
+				<li class="collaboration-step"><div class="collaboration-marker" aria-hidden="true">4</div><div><h3>Autonomie</h3><p>Documenter les livrables et transmettre les bonnes pratiques à vos équipes.</p></div></li>
+			</ol>
 		</section>
 
-		<section id="cta-final" class="hero" aria-labelledby="cta-title">
-			<div>
+		<section id="cta-final" class="skills-cta-section" aria-labelledby="cta-title">
+			<div class="skills-cta-content">
 				<p class="eyebrow">Parlons de votre besoin</p>
 				<h2 id="cta-title">Vous avez une question data à éclairer ?</h2>
 				<p class="lead">Décrivez-moi votre contexte et vos objectifs. Nous identifierons ensemble l’approche la plus adaptée.</p>
 
 				<div class="actions">
-					<a class="button" href="contact.html">Me contacter</a>
+					<a class="button skills-cta-button" href="contact.html">Me contacter</a>
 				</div>
+				<p class="skills-cta-reassurance">Réponse sous 24h - Sans engagement</p>
 			</div>
 		</section>
 	</main>

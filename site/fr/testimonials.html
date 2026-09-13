@@ -55,14 +55,15 @@
 	</header>
 
 	<main id="main-content">
-		<section id="testimonials-hero" class="hero" aria-labelledby="testimonials-title">
-			<div>
+		<section id="testimonials-hero" class="testimonials-hero-section" aria-labelledby="testimonials-title">
+			<div class="testimonials-hero-content">
 				<p class="eyebrow">Approche et résultats</p>
 				<h1 id="testimonials-title">Des résultats documentés au fil des missions</h1>
 				<p class="lead">Je construis mes collaborations freelance avec une exigence simple : être transparent sur mon parcours, rigoureux dans ma méthode et orienté vers vos décisions.</p>
 			</div>
 
-			<aside class="hero-note" aria-label="Engagement de transparence">
+			<aside class="testimonials-highlight-card" aria-label="Engagement de transparence">
+				<div class="testimonials-highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
 				<strong>Pas de témoignage inventé.</strong>
 				<p>Les premiers retours clients seront publiés avec leur accord, leur contexte et des résultats vérifiables.</p>
 			</aside>
@@ -74,30 +75,25 @@
 				<h2 id="testimonials-list-title">Une parole honnête dès le départ</h2>
 			</div>
 
-			<div class="grid">
-				<article class="card testimonial-card" data-testimonial-status="message-de-transparence">
-					<blockquote>
-						<p>« Je débute en freelance, pas en analyse. Après 2 années sur les données opérationnelles et bancaires, transparence totale sur mon parcours et rigueur maximale sur vos données. »</p>
-						<cite>RAZANAKOTO Lovatahiana Nomenjanahary, data analyst freelance</cite>
-					</blockquote>
+			<div class="grid testimonial-engagement-grid">
+				<article class="card testimonial-engagement-card" data-testimonial-status="engagement">
+					<div class="testimonial-engagement-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h8M9 8l-2-2a2.8 2.8 0 0 0-4 4l5 5a2.8 2.8 0 0 0 4 0l1-1"/><path d="m15 8 2-2a2.8 2.8 0 0 1 4 4l-5 5a2.8 2.8 0 0 1-4 0l-1-1"/></svg></div>
+					<h3>Mon engagement</h3>
+					<ul class="testimonial-commitment-list">
+						<li>Transparence totale sur ma méthode</li>
+						<li>Rigueur maximale sur vos données</li>
+						<li>Aucune promesse non tenue</li>
+					</ul>
 				</article>
 
-				<article class="card testimonial-card" data-testimonial-status="a-venir">
-					<blockquote>
-						<p>Les prochains témoignages présenteront le contexte de la mission, la démarche suivie et les résultats obtenus avec l'accord du client.</p>
-						<cite>Témoignage client à venir</cite>
-					</blockquote>
-
-					<div class="testimonial-meta">
-						<figure class="testimonial-photo" data-field="client-photo">
-							<figcaption>Témoignage vérifié</figcaption>
-						</figure>
-						<div>
-							<p><strong data-field="client-name">Prochaine collaboration</strong></p>
-							<p class="reassurance" data-field="client-company">PME / Startup partenaire</p>
-							<p class="reassurance" data-field="client-result">Retours et impact mesurés</p>
-						</div>
-					</div>
+				<article class="card testimonial-engagement-card" data-testimonial-status="resultats-attendus">
+					<div class="testimonial-engagement-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 2 5-6"/><path d="M15 7h3v3"/></svg></div>
+					<h3>Ce que mes clients diront</h3>
+					<ul class="testimonial-commitment-list">
+						<li>Un dashboard clair et adopté par les équipes</li>
+						<li>Une réduction mesurable du temps de reporting</li>
+						<li>Une prise de décision basée sur les données</li>
+					</ul>
 				</article>
 			</div>
 		</section>
@@ -109,33 +105,43 @@
 				<p>Les résultats agrégés seront ajoutés à partir de missions réelles, documentées et anonymisées lorsque nécessaire.</p>
 			</div>
 
-			<div class="grid">
-				<article class="card">
-					<h3><data class="number" data-result="margin-recovered">À mesurer</data></h3>
-					<p>Marge récupérable moyenne grâce à l'identification des leviers d'amélioration.</p>
+			<div class="grid results-goals-grid">
+				<article class="card results-goal-card">
+					<div class="results-goal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-4 3 2 5-6"/><path d="M15 7h3v3"/></svg></div>
+					<p class="results-goal-label">Objectif</p>
+					<h3>Marge récupérable</h3>
+					<p>Identification des leviers d'amélioration via un audit des données et des performances.</p>
+					<div class="results-goal-progress"><div class="results-goal-progress-label"><span>Prêt à mesurer</span><strong>0%</strong></div><div class="results-goal-progress-track" role="progressbar" aria-label="Marge récupérable : prêt à mesurer" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div></div>
 				</article>
 
-				<article class="card">
-					<h3><data class="number" data-result="reporting-time-saved">À mesurer</data></h3>
-					<p>Temps moyen économisé sur la préparation des reportings récurrents.</p>
+				<article class="card results-goal-card">
+					<div class="results-goal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+					<p class="results-goal-label">Objectif</p>
+					<h3>Temps économisé</h3>
+					<p>Comparaison du temps consacré aux reportings avant et après l'automatisation des tâches récurrentes.</p>
+					<div class="results-goal-progress"><div class="results-goal-progress-label"><span>Prêt à mesurer</span><strong>0%</strong></div><div class="results-goal-progress-track" role="progressbar" aria-label="Temps économisé : prêt à mesurer" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div></div>
 				</article>
 
-				<article class="card">
-					<h3><data class="number" data-result="data-quality">À mesurer</data></h3>
-					<p>Progression moyenne de la fiabilité des données après nettoyage et contrôles.</p>
+				<article class="card results-goal-card">
+					<div class="results-goal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+					<p class="results-goal-label">Objectif</p>
+					<h3>Fiabilité des données</h3>
+					<p>Mesure de la qualité des données après nettoyage, contrôles et documentation des flux.</p>
+					<div class="results-goal-progress"><div class="results-goal-progress-label"><span>Prêt à mesurer</span><strong>0%</strong></div><div class="results-goal-progress-track" role="progressbar" aria-label="Fiabilité des données : prêt à mesurer" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div></div>
 				</article>
 			</div>
 		</section>
 
-		<section id="cta-final" class="hero" aria-labelledby="cta-title">
-			<div>
+		<section id="cta-final" class="testimonials-cta-section" aria-labelledby="cta-title">
+			<div class="testimonials-cta-content">
 				<p class="eyebrow">Première collaboration</p>
 				<h2 id="cta-title">Construisons un premier résultat mesurable</h2>
 				<p class="lead">Parlez-moi de votre besoin data. Je vous répondrai avec une approche claire, adaptée à votre contexte et transparente sur ce que je peux vous apporter.</p>
 
 				<div class="actions">
-					<a class="button" href="contact.html">Me contacter</a>
+					<a class="button testimonials-cta-button" href="contact.html">Me contacter</a>
 				</div>
+				<p class="testimonials-cta-reassurance">Réponse sous 24h - Sans engagement</p>
 			</div>
 		</section>
 	</main>
