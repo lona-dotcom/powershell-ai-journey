@@ -51,87 +51,245 @@
 		</nav>
 	</header>
 	<main id="main-content">
-		<section id="services-hero" class="hero" aria-labelledby="services-title">
-			<div>
-				<p class="eyebrow">Services</p>
-				<h1 id="services-title">Des prestations data claires, concrètes et orientées résultats</h1>
-				<p class="lead">J'aide les PME et startups à transformer leurs données brutes en décisions concrètes — dashboards clairs, analyses actionnables, zéro jargon.</p>
+		<section id="services-hero" class="services-hero-section" aria-labelledby="services-title">
+			<div class="services-hero-grid">
+				<!-- Colonne de gauche : Titre & Présentation -->
+				<div class="services-hero-content">
+					<span class="services-badge" aria-hidden="true">SERVICES</span>
+					<h1 id="services-title" class="services-hero-title">
+						Des prestations data claires, concrètes et orientées résultats
+					</h1>
+					<p class="services-hero-lead">
+						J'aide les PME et startups à transformer leurs données brutes en décisions concrètes — dashboards clairs, analyses actionnables, zéro jargon.
+					</p>
+				</div>
+
+				<!-- Colonne de droite : Encart d'information (Card) -->
+				<aside class="services-highlight-card" aria-label="Engagement de service">
+					<div class="card-icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+							<path d="m9 12 2 2 4-4"/>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h2 class="card-title">Des résultats utiles à vos décisions</h2>
+						<p class="card-text">
+							Chaque mission est cadrée selon votre contexte, vos données disponibles et vos objectifs de performance commerciale ou opérationnelle.
+						</p>
+					</div>
+				</aside>
 			</div>
-			<aside class="hero-note" aria-label="Engagement professionnel">
-				<strong>Des résultats utiles à vos décisions.</strong>
-				<p>Chaque mission est cadrée selon votre contexte, vos données disponibles et vos objectifs de performance commerciale ou opérationnelle.</p>
-			</aside>
 		</section>
-		<section id="services-list" aria-labelledby="services-list-title">
+		<section id="services-list" class="services-list-section" aria-labelledby="services-list-title">
 			<div class="intro">
 				<p class="eyebrow">Prestations</p>
 				<h2 id="services-list-title">Un accompagnement adapté à votre besoin</h2>
 			</div>
-			<div class="grid">
-				<article class="card">
-					<h3><span aria-hidden="true">📊 </span>Tableaux de bord &amp; reporting</h3>
-					<p>Vos KPI en un coup d'œil, actualisés automatiquement sur Power BI, Tableau, Looker Studio ou Excel.</p>
-					<h4>Vous obtiendrez</h4>
-					<ul>
-						<li>Un dashboard interactif et automatisé</li>
-						<li>Une documentation claire du modèle de données</li>
-						<li>Une prise en main guidée pour vos équipes</li>
-					</ul>
-					<p><strong>Durée indicative :</strong> <span data-duration="5-10">5 à 10 jours</span></p>
-					<div class="actions">
-						<a class="button" href="contact.html">Demander un devis</a>
+			
+			<div class="services-cards-grid">
+				<!-- Service 1 : Tableaux de bord & reporting -->
+				<article class="service-card">
+					<div class="service-card-header">
+						<div class="service-icon" aria-hidden="true">
+							<!-- Heroicon: Chart Bar -->
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M3 3v18h18"/>
+								<path d="M18 17V9"/>
+								<path d="M13 17V5"/>
+								<path d="M8 17v-3"/>
+							</svg>
+						</div>
+						<h3>Tableaux de bord &amp; reporting</h3>
+					</div>
+					<p class="service-description">
+						Vos KPI en un coup d'œil, actualisés automatiquement sur Power BI, Tableau, Looker Studio ou Excel.
+					</p>
+					
+					<div class="service-deliverables">
+						<h4>Vous obtiendrez</h4>
+						<ul class="custom-check-list">
+							<li>Un dashboard interactif et automatisé</li>
+							<li>Une documentation claire du modèle de données</li>
+							<li>Une prise en main guidée pour vos équipes</li>
+						</ul>
+					</div>
+
+					<div class="service-card-footer">
+						<div class="duration-badge">
+							<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+							<span>Durée : <strong>5 à 10 jours</strong></span>
+						</div>
+						<a class="button button-service-cta" href="contact.html">Demander un devis</a>
 					</div>
 				</article>
-				<article class="card">
-					<h3><span aria-hidden="true">🔍 </span>Analyse &amp; insights business</h3>
-					<p>Exploration approfondie (SQL, Python, R) pour piloter la performance commerciale, détecter les anomalies et guider vos décisions.</p>
-					<h4>Vous obtiendrez</h4>
-					<ul>
-						<li>Un rapport d'analyse clair et visuel</li>
-						<li>Des recommandations actionnables</li>
-					</ul>
-					<p><strong>Durée indicative :</strong> <span data-duration="5-15">5 à 15 jours</span></p>
+
+				<!-- Service 2 : Analyse & insights business -->
+				<article class="service-card">
+					<div class="service-card-header">
+						<div class="service-icon" aria-hidden="true">
+							<!-- Heroicon: Magnifying Glass / Search -->
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="11" cy="11" r="8"/>
+								<line x1="21" y1="21" x2="16.65" y2="16.65"/>
+								<line x1="11" y1="8" x2="11" y2="8.01"/>
+								<line x1="8" y1="11" x2="14" y2="11"/>
+							</svg>
+						</div>
+						<h3>Analyse &amp; insights business</h3>
+					</div>
+					<p class="service-description">
+						Exploration approfondie (SQL, Python, R) pour piloter la performance commerciale, détecter les anomalies et guider vos décisions.
+					</p>
+					
+					<div class="service-deliverables">
+						<h4>Vous obtiendrez</h4>
+						<ul class="custom-check-list">
+							<li>Un rapport d'analyse clair et visuel</li>
+							<li>Des recommandations actionnables et chiffrées</li>
+							<li>Une restitution pédagogique sans jargon</li>
+						</ul>
+					</div>
+
+					<div class="service-card-footer">
+						<div class="duration-badge">
+							<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+							<span>Durée : <strong>5 à 15 jours</strong></span>
+						</div>
+						<a class="button button-service-cta" href="contact.html">Demander un devis</a>
+					</div>
 				</article>
-				<article class="card">
-					<h3><span aria-hidden="true">🧹 </span>Nettoyage &amp; fiabilisation des données</h3>
-					<p>Audit, normalisation et automatisation des flux (SQL, Python, PostgreSQL, DuckDB) pour garantir l'intégrité de vos données.</p>
-					<h4>Vous obtiendrez</h4>
-					<ul>
-						<li>Un jeu de données assaini et structuré</li>
-						<li>Des scripts reproductibles et documentés</li>
-						<li>Un contrôle qualité et validation des flux</li>
-					</ul>
-					<p><strong>Durée indicative :</strong> <span data-duration="3-7">3 à 7 jours</span></p>
+
+				<!-- Service 3 : Nettoyage & fiabilisation des données -->
+				<article class="service-card">
+					<div class="service-card-header">
+						<div class="service-icon" aria-hidden="true">
+							<!-- Heroicon: Sparkles / Cleaning / Verification -->
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+							</svg>
+						</div>
+						<h3>Nettoyage &amp; fiabilisation</h3>
+					</div>
+					<p class="service-description">
+						Audit, normalisation et automatisation des flux (SQL, Python, DuckDB) pour éliminer les doublons et garantir des données fiables.
+					</p>
+					
+					<div class="service-deliverables">
+						<h4>Vous obtiendrez</h4>
+						<ul class="custom-check-list">
+							<li>Un jeu de données assaini et structuré</li>
+							<li>Des scripts reproductibles et documentés</li>
+							<li>Un contrôle qualité et validation des flux</li>
+						</ul>
+					</div>
+
+					<div class="service-card-footer">
+						<div class="duration-badge">
+							<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<circle cx="12" cy="12" r="10"/>
+								<polyline points="12 6 12 12 16 14"/>
+							</svg>
+							<span>Durée : <strong>3 à 7 jours</strong></span>
+						</div>
+						<a class="button button-service-cta" href="contact.html">Demander un devis</a>
+					</div>
 				</article>
 			</div>
 		</section>
-		<section id="process" aria-labelledby="process-title">
+		<!-- Section Méthode : Timeline en 4 étapes -->
+		<section id="process" class="process-timeline-section" aria-labelledby="process-title">
 			<div class="intro">
 				<p class="eyebrow">Méthode</p>
 				<h2 id="process-title">Une collaboration en 4 étapes</h2>
 			</div>
-			<ol class="grid">
-				<li class="card"><h3>Brief</h3><p>Cadrage précis de votre besoin métier, définition des KPI cibles et inventaire des sources de données disponibles.</p></li>
-				<li class="card"><h3>Analyse</h3><p>Nettoyage, traitement et modélisation des données avec des points d'étape réguliers sans jargon.</p></li>
-				<li class="card"><h3>Livraison</h3><p>Remise du tableau de bord interactif ou du rapport, documenté et immédiatement exploitable.</p></li>
-				<li class="card"><h3>Suivi</h3><p>Session de prise en main, accompagnement des équipes et ajustements pour garantir votre autonomie.</p></li>
+
+			<ol class="process-timeline">
+				<!-- Étape 1 -->
+				<li class="process-step">
+					<div class="step-indicator">
+						<span class="step-number" aria-hidden="true">1</span>
+					</div>
+					<div class="step-body">
+						<h3 class="step-title">Brief</h3>
+						<p class="step-desc">Cadrage précis de votre besoin métier, définition des KPI cibles et inventaire des sources disponibles.</p>
+					</div>
+				</li>
+
+				<!-- Étape 2 -->
+				<li class="process-step">
+					<div class="step-indicator">
+						<span class="step-number" aria-hidden="true">2</span>
+					</div>
+					<div class="step-body">
+						<h3 class="step-title">Analyse</h3>
+						<p class="step-desc">Nettoyage, traitement et modélisation des données avec des points d'étape réguliers sans jargon.</p>
+					</div>
+				</li>
+
+				<!-- Étape 3 -->
+				<li class="process-step">
+					<div class="step-indicator">
+						<span class="step-number" aria-hidden="true">3</span>
+					</div>
+					<div class="step-body">
+						<h3 class="step-title">Livraison</h3>
+						<p class="step-desc">Remise du tableau de bord interactif ou du rapport, documenté et immédiatement exploitable.</p>
+					</div>
+				</li>
+
+				<!-- Étape 4 -->
+				<li class="process-step">
+					<div class="step-indicator">
+						<span class="step-number" aria-hidden="true">4</span>
+					</div>
+					<div class="step-body">
+						<h3 class="step-title">Suivi</h3>
+						<p class="step-desc">Session de prise en main, accompagnement des équipes et ajustements pour garantir votre totale autonomie.</p>
+					</div>
+				</li>
 			</ol>
 		</section>
-		<section id="pricing-note" aria-labelledby="pricing-title">
-			<div class="hero-note">
+
+		<!-- Section Tarification transparente -->
+		<section id="pricing-note" class="pricing-section" aria-labelledby="pricing-title">
+			<div class="pricing-card">
+				<div class="pricing-shield-icon" aria-hidden="true">
+					<!-- Heroicon: Shield Check -->
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+						<path d="m9 12 2 2 4-4"/>
+					</svg>
+				</div>
 				<p class="eyebrow">Tarification</p>
-				<h2 id="pricing-title">Une tarification transparente</h2>
-				<p>Vous recevez un devis fixe, détaillé selon le périmètre et les livrables convenus. Aucun frais caché ne s'ajoute en cours de mission.</p>
+				<h2 id="pricing-title" class="pricing-title">Une tarification claire &amp; transparente</h2>
+				<p class="pricing-desc">
+					Vous recevez un devis fixe, détaillé selon le périmètre et les livrables convenus.
+				</p>
+				<div class="pricing-guarantee-pill">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<circle cx="12" cy="12" r="10"/>
+						<polyline points="9 12 11 14 15 10"/>
+					</svg>
+					<span><strong>Zéro surprise :</strong> Aucun frais caché ne s'ajoute en cours de mission</span>
+				</div>
 			</div>
 		</section>
-		<section id="cta-final" class="hero" aria-labelledby="cta-title">
-			<div>
+		<section id="cta-final" class="hero services-cta-section" aria-labelledby="cta-title">
+			<div class="services-cta-content">
 				<p class="eyebrow">Premier échange</p>
 				<h2 id="cta-title">Parlons de votre besoin data</h2>
 				<p class="lead">Expliquez-moi votre contexte et votre objectif. Je vous répondrai sous 24h avec une première orientation claire, sans engagement.</p>
 				<div class="actions">
-					<a class="button" href="contact.html">Me contacter</a>
+					<a class="button services-cta-button" href="contact.html">Me contacter</a>
 				</div>
+				<p class="services-cta-reassurance">Réponse sous 24h - Sans engagement</p>
 			</div>
 		</section>
 	</main>
