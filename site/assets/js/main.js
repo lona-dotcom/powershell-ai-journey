@@ -1,5 +1,42 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.nav-list');
+const navbar = document.querySelector('.navbar');
+
+const themeToggle = document.createElement('button');
+themeToggle.className = 'theme-toggle';
+themeToggle.type = 'button';
+themeToggle.setAttribute('aria-pressed', 'false');
+
+const themeLanguage = document.documentElement.lang || 'fr';
+const themeLabels = {
+  fr: { light: 'Thème : Clair', dark: 'Thème : Sombre', toLight: 'Activer le thème clair', toDark: 'Activer le thème sombre' },
+  de: { light: 'Thema: Hell', dark: 'Thema: Dunkel', toLight: 'Helles Thema aktivieren', toDark: 'Dunkles Thema aktivieren' },
+  en: { light: 'Theme: Light', dark: 'Theme: Dark', toLight: 'Enable light theme', toDark: 'Enable dark theme' }
+};
+const currentThemeLabels = themeLabels[themeLanguage] || themeLabels.fr;
+
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+const applyTheme = (theme) => {
+  const isDark = theme === 'dark';
+  document.documentElement.toggleAttribute('data-theme', isDark);
+  if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+  themeToggle.textContent = isDark ? currentThemeLabels.dark : currentThemeLabels.light;
+  themeToggle.setAttribute('aria-label', isDark ? currentThemeLabels.toLight : currentThemeLabels.toDark);
+  themeToggle.setAttribute('aria-pressed', String(isDark));
+};
+
+if (navbar) {
+  navbar.insertBefore(themeToggle, menuButton || navigation);
+  applyTheme(initialTheme);
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', nextTheme);
+    applyTheme(nextTheme);
+  });
+}
 
 const languageLinks = {
   fr: {
