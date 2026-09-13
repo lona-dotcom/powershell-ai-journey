@@ -51,103 +51,323 @@
 		</nav>
 	</header>
 	<main id="main-content">
-		<section id="about-hero" class="hero" aria-labelledby="about-title">
-			<div>
-				<p class="eyebrow">À propos</p>
-				<h1 id="about-title">Derrière les données, un analyste à votre écoute</h1>
-				<p class="lead">Data Analyst Freelance basé à Toamasina, j'aide les PME et startups à transformer leurs données brutes en décisions concrètes — dashboards clairs, analyses actionnables, zéro jargon. RAZANAKOTO Lovatahiana Nomenjanahary, EAST COAST MADAGASCAR.</p>
-				<p class="reassurance">J'accompagne les entreprises en Allemagne, France et Royaume-Uni. Langues de travail : FR, DE, EN.</p>
+		<!-- Section Hero À Propos modernisée -->
+		<section id="about-hero" class="about-hero-section fade-in-scroll" aria-labelledby="about-title">
+			<div class="about-hero-content">
+				<p class="eyebrow about-eyebrow">À PROPOS</p>
+				<h1 id="about-title" class="about-title">
+					Derrière les données, un analyste à votre écoute
+				</h1>
+				<p class="about-lead">
+					Je suis <strong>RAZANAKOTO Lovatahiana Nomenjanahary</strong>, Data Analyst Freelance. J'aide les PME, startups et directions opérationnelles à transformer leurs volumes de données brutes en décisions claires, rentables et directement actionnables — avec des tableaux de bord interactifs et zéro jargon inutile.
+				</p>
+				
+				<!-- Badges d'informations clés (Localisation, Langues, Expérience) -->
+				<div class="about-badges" aria-label="Informations clés">
+					<span class="info-badge">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+							<circle cx="12" cy="10" r="3"></circle>
+						</svg>
+						<span>Toamasina, Madagascar (UTC+3)</span>
+					</span>
+					<span class="info-badge">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<circle cx="12" cy="12" r="10"></circle>
+							<line x1="2" y1="12" x2="22" y2="12"></line>
+							<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+						</svg>
+						<span>Missions : France, Allemagne, UK &amp; International</span>
+					</span>
+					<span class="info-badge">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<path d="m5 8 6 6"></path>
+							<path d="m4 14 6-6 2-3"></path>
+							<path d="M2 5h12"></path>
+							<path d="M7 2h1"></path>
+							<path d="m22 22-5-10-5 10"></path>
+							<path d="M14 18h6"></path>
+						</svg>
+						<span>Langues de travail : FR · DE · EN</span>
+					</span>
+				</div>
 			</div>
-			<figure class="hero-note">
-				<img src="../assets/img/photo-profil.jpg" alt="Portrait de RAZANAKOTO Lovatahiana Nomenjanahary, data analyst freelance" width="1200" height="630" loading="lazy" decoding="async">
-				<figcaption class="reassurance">RAZANAKOTO Lovatahiana Nomenjanahary.</figcaption>
-			</figure>
+
+			<!-- Visuel Photo avec cadre décoratif décalé -->
+			<div class="about-hero-photo-wrapper">
+				<div class="photo-decor-frame" aria-hidden="true"></div>
+				<figure class="about-photo-card">
+					<img 
+						src="../assets/img/photo-profil.jpg" 
+						alt="Portrait de RAZANAKOTO Lovatahiana Nomenjanahary, data analyst freelance" 
+						width="480" 
+						height="560" 
+						loading="eager" 
+						decoding="async"
+					>
+					<figcaption class="photo-badge">
+						<span class="status-dot" aria-hidden="true"></span>
+						<span>Disponible pour de nouveaux projets</span>
+					</figcaption>
+				</figure>
+			</div>
 		</section>
-		<section id="story" aria-labelledby="story-title">
+		<!-- Section Mon Parcours (Cards 3D avec icônes SVG) -->
+		<section id="story" class="about-section" aria-labelledby="story-title">
 			<div class="intro">
 				<p class="eyebrow">Mon parcours</p>
 				<h2 id="story-title">Une expertise construite autour de vos enjeux</h2>
 			</div>
-			<div class="grid">
-				<article class="card">
-					<h3>Un parcours orienté terrain</h3>
-					<p>Après 2 années passées à analyser les données opérationnelles et piloter la performance, j'ai constaté que trop d'entreprises décident à l'aveugle alors que les réponses sont dans leurs données. C'est pour combler ce fossé que je me suis lancé en freelance.</p>
+			<div class="about-cards-grid grid-3">
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon path-icon" aria-hidden="true">
+						<!-- Icône Carte / Parcours -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+							<line x1="9" y1="3" x2="9" y2="18"></line>
+							<line x1="15" y1="6" x2="15" y2="21"></line>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Un parcours orienté terrain</h3>
+						<p>Après 2 années passées à analyser les données opérationnelles et piloter la performance, j'ai constaté que trop d'entreprises décident à l'aveugle alors que les réponses sont dans leurs données. C'est pour combler ce fossé que je me suis lancé en freelance.</p>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Formation académique</h3>
-					<p>Diplômé d'un Master of Science (MSc) en 2024 à la Faculté des Sciences et Technologie de l'Université de Toamasina, et d'un Bachelor's degree obtenu en 2016 au CNTEMAD.</p>
+
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon education-icon" aria-hidden="true">
+						<!-- Icône Diplôme / Académique -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+							<path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Formation académique</h3>
+						<p>Diplômé d'un <strong>Master of Science (MSc)</strong> en 2024 à la Faculté des Sciences et Technologie de l'Université de Toamasina, et d'un <strong>Bachelor's degree</strong> obtenu en 2016 au CNTEMAD.</p>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Compétences &amp; Outils</h3>
-					<p>Maîtrise des langages Python, R, SQL, DAX et PowerShell, des outils de visualisation (Power BI, Tableau, Looker Studio, Excel) et des bases de données PostgreSQL et DuckDB.</p>
+
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon tools-icon" aria-hidden="true">
+						<!-- Icône Outils / Compétences -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Compétences &amp; Outils</h3>
+						<p>Maîtrise des langages Python, R, SQL, DAX et PowerShell, des outils de visualisation (Power BI, Tableau, Looker Studio, Excel) et des bases de données PostgreSQL et DuckDB.</p>
+					</div>
 				</article>
 			</div>
 		</section>
-		<section id="philosophy" aria-labelledby="philosophy-title">
+
+		<!-- Section Ma Philosophie (Cards 3D avec icônes SVG) -->
+		<section id="philosophy" class="about-section" aria-labelledby="philosophy-title">
 			<div class="intro">
 				<p class="eyebrow">Ma philosophie</p>
 				<h2 id="philosophy-title">Une méthode claire, collaborative et utile</h2>
 			</div>
-			<div class="grid">
-				<article class="card">
-					<h3>Approche terrain</h3>
-					<p>Je pars de vos contraintes, de vos outils et de vos usages existants pour proposer une solution réaliste et directement applicable.</p>
+			<div class="about-cards-grid grid-4">
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon idea-icon" aria-hidden="true">
+						<!-- Ampoule / Idée -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M9 18h6"></path>
+							<path d="M10 22h4"></path>
+							<path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Approche terrain</h3>
+						<p>Je pars de vos contraintes, de vos outils et de vos usages existants pour proposer une solution réaliste et directement applicable.</p>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Co-construction</h3>
-					<p>Vous restez impliqué à chaque étape afin que les résultats répondent à vos vraies questions et soient adoptés par vos équipes.</p>
+
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon users-icon" aria-hidden="true">
+						<!-- Co-construction / Partenariat -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+							<circle cx="9" cy="7" r="4"></circle>
+							<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+							<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Co-construction</h3>
+						<p>Vous restez impliqué à chaque étape afin que les résultats répondent à vos vraies questions et soient adoptés par vos équipes.</p>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Vulgarisation</h3>
-					<p>Je transforme les analyses complexes en explications accessibles, pour que chacun puisse comprendre les résultats et agir.</p>
+
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon message-icon" aria-hidden="true">
+						<!-- Vulgarisation / Dialogue -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Vulgarisation</h3>
+						<p>Je transforme les analyses complexes en explications accessibles, pour que chacun puisse comprendre les résultats et agir.</p>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Transparence</h3>
-					<p>Les hypothèses, les limites, les méthodes et les livrables sont expliqués clairement, sans jargon inutile ni promesse exagérée.</p>
+
+				<article class="modern-card fade-in-scroll">
+					<div class="card-header-icon shield-icon" aria-hidden="true">
+						<!-- Transparence / Confiance -->
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+						</svg>
+					</div>
+					<div class="card-body">
+						<h3>Transparence</h3>
+						<p>Les hypothèses, les limites, les méthodes et les livrables sont expliqués clairement, sans jargon inutile ni promesse exagérée.</p>
+					</div>
 				</article>
 			</div>
 		</section>
-		<section id="experience" aria-labelledby="experience-title">
+
+		<!-- Section Expérience : Timeline Interactive & Élégante -->
+		<section id="experience" class="about-section" aria-labelledby="experience-title">
 			<div class="intro">
-				<p class="eyebrow">Expérience</p>
+				<p class="eyebrow">Parcours &amp; Expériences</p>
 				<h2 id="experience-title">Des expériences utiles à vos décisions</h2>
 			</div>
-			<ol class="grid">
-				<li class="card">
-					<h3>2025–2026 · SBBO, AccèsBanque Madagascar</h3>
-					<p>Pilotage des données opérationnelles et reporting de performance de l'agence : suivi des objectifs, KPI et détection d'anomalies.</p>
-				</li>
-				<li class="card">
-					<h3>2023–2025 · CBBO, AccèsBanque Madagascar</h3>
-					<p>Contrôle de la conformité des données saisies dans le système d'information et validation des opérations bancaires.</p>
-				</li>
-				<li class="card">
-					<h3>Depuis 2026 · Data Analyst Freelance</h3>
-					<p>Accompagnement des PME et startups : transformation des données brutes en tableaux de bord décisionnels et recommandations concrètes.</p>
-				</li>
-			</ol>
+			
+			<div class="timeline-container fade-in-scroll">
+				<ol class="experience-timeline" aria-label="Ligne de temps professionnelle">
+					<!-- Étape 1 : Depuis 2026 (Actuel) -->
+					<li class="timeline-item current-item">
+						<div class="timeline-marker" aria-hidden="true">
+							<span class="pulse-dot"></span>
+						</div>
+						<article class="timeline-card">
+							<div class="timeline-header">
+								<span class="timeline-badge current">Actuellement</span>
+								<time class="timeline-period" datetime="2026">Depuis 2026</time>
+							</div>
+							<div class="timeline-title-group">
+								<div class="timeline-icon" aria-hidden="true">
+									<!-- Mallette professionnelle -->
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+										<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+									</svg>
+								</div>
+								<h3>Data Analyst Freelance</h3>
+							</div>
+							<p class="timeline-role-subtitle">Accompagnement indépendant des PME &amp; Startups</p>
+							<p class="timeline-description">
+								Transformation des données brutes en tableaux de bord décisionnels interactifs (Power BI, Tableau) et recommandations concrètes sans jargon technique.
+							</p>
+						</article>
+					</li>
+
+					<!-- Étape 2 : 2025-2026 -->
+					<li class="timeline-item">
+						<div class="timeline-marker" aria-hidden="true"></div>
+						<article class="timeline-card">
+							<div class="timeline-header">
+								<span class="timeline-badge">Secteur bancaire</span>
+								<time class="timeline-period" datetime="2025/2026">2025 – 2026</time>
+							</div>
+							<div class="timeline-title-group">
+								<div class="timeline-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="18" y1="20" x2="18" y2="10"></line>
+										<line x1="12" y1="20" x2="12" y2="4"></line>
+										<line x1="6" y1="20" x2="6" y2="14"></line>
+									</svg>
+								</div>
+								<h3>SBBO · AccèsBanque Madagascar</h3>
+							</div>
+							<p class="timeline-role-subtitle">Senior Branch Business Officer</p>
+							<p class="timeline-description">
+								Pilotage des flux de données opérationnelles et reporting de performance d'agence : suivi quotidien des objectifs, des indicateurs de rentabilité (KPI) et détection proactive d'anomalies.
+							</p>
+						</article>
+					</li>
+
+					<!-- Étape 3 : 2023-2025 -->
+					<li class="timeline-item">
+						<div class="timeline-marker" aria-hidden="true"></div>
+						<article class="timeline-card">
+							<div class="timeline-header">
+								<span class="timeline-badge">Qualité &amp; Conformité</span>
+								<time class="timeline-period" datetime="2023/2025">2023 – 2025</time>
+							</div>
+							<div class="timeline-title-group">
+								<div class="timeline-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+									</svg>
+								</div>
+								<h3>CBBO · AccèsBanque Madagascar</h3>
+							</div>
+							<p class="timeline-role-subtitle">Customer Branch Business Officer</p>
+							<p class="timeline-description">
+								Contrôle rigoureux de la conformité des données saisies dans le système d'information bancaire, fiabilisation des processus et validation des opérations complexes.
+							</p>
+						</article>
+					</li>
+				</ol>
+			</div>
 		</section>
-		<section id="cv" aria-labelledby="cv-title">
-			<div class="hero-note">
-				<p class="eyebrow">Parcours détaillé</p>
-				<h2 id="cv-title">Consulter mon CV</h2>
-				<p>Retrouvez le détail de mon parcours, mes compétences techniques et mes diplômes dans mon curriculum vitæ.</p>
-				<div class="actions">
-					<a class="button" href="../assets/cv/cv-fr.pdf" download aria-label="Télécharger le CV de RAZANAKOTO Lovatahiana Nomenjanahary au format PDF">Télécharger mon CV (PDF)</a>
+		<!-- Section CV modernisée -->
+		<section id="cv" class="about-section cv-download-section fade-in-scroll" aria-labelledby="cv-title">
+			<div class="cv-card">
+				<div class="cv-content">
+					<p class="eyebrow">Curriculum Vitæ</p>
+					<h2 id="cv-title">Consulter mon parcours complet</h2>
+					<p>Retrouvez le détail exhaustif de mes expériences bancaires, mes compétences techniques (Python, SQL, Power BI) et mes diplômes académiques dans mon CV à jour.</p>
+				</div>
+				<div class="cv-action">
+					<a class="button cta-btn-large" href="../assets/cv/cv-fr.pdf" download aria-label="Télécharger le CV de RAZANAKOTO Lovatahiana Nomenjanahary au format PDF">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+							<polyline points="7 10 12 15 17 10"></polyline>
+							<line x1="12" y1="15" x2="12" y2="3"></line>
+						</svg>
+						<span>Télécharger mon CV (PDF)</span>
+					</a>
 				</div>
 			</div>
 		</section>
-		<section id="cta-final" class="hero" aria-labelledby="cta-title">
-			<div>
-				<p class="eyebrow">Parlons de vos enjeux</p>
-				<h2 id="cta-title">Votre contexte mérite une analyse sur mesure</h2>
-				<p class="lead">Expliquez-moi ce que vous cherchez à comprendre ou à améliorer. Nous identifierons ensemble la prochaine étape la plus utile, sans engagement.</p>
-				<div class="actions">
-					<a class="button" href="contact.html">Discuter de mon projet</a>
+		<!-- Section CTA engageante avec fond contrasté & réassurance -->
+		<section id="cta-final" class="cta-banner-section fade-in-scroll" aria-labelledby="cta-title">
+			<div class="cta-banner-content">
+				<p class="eyebrow cta-eyebrow">PARLONS DE VOS ENJEUX</p>
+				<h2 id="cta-title" class="cta-banner-title">Votre contexte mérite une analyse sur mesure</h2>
+				<p class="cta-banner-lead">
+					Expliquez-moi ce que vous cherchez à comprendre, automatiser ou optimiser. Nous identifierons ensemble la prochaine étape la plus rentable pour votre activité.
+				</p>
+				<div class="cta-banner-actions">
+					<a class="button cta-btn-large" href="contact.html">
+						<span>Discuter de mon projet</span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<line x1="5" y1="12" x2="19" y2="12"></line>
+							<polyline points="12 5 19 12 12 19"></polyline>
+						</svg>
+					</a>
 				</div>
+				<p class="cta-reassurance-text">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<circle cx="12" cy="12" r="10"></circle>
+						<polyline points="12 6 12 12 16 14"></polyline>
+					</svg>
+					<span>Réponse garantie sous 24h ouvrées</span>
+					<span class="dot-separator" aria-hidden="true">·</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+					</svg>
+					<span>Échange 100% confidentiel &amp; sans engagement</span>
+				</p>
 			</div>
 		</section>
 	</main>
+
 	<footer class="site-footer">
 		<div class="footer-inner">
 			<div>
