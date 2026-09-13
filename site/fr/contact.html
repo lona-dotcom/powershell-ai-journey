@@ -54,14 +54,15 @@
 	</header>
 
 	<main id="main-content">
-		<section id="contact-hero" class="hero" aria-labelledby="contact-title">
-			<div>
+		<section id="contact-hero" class="contact-hero-section" aria-labelledby="contact-title">
+			<div class="contact-hero-content">
 				<p class="eyebrow">Contact</p>
 				<h1 id="contact-title">Discutons de votre projet — sans engagement</h1>
 				<p class="lead">Quelques lignes suffisent pour me donner le contexte. Je vous répondrai avec une première orientation claire.</p>
 			</div>
 
-			<aside class="hero-note" aria-label="Engagement de réponse">
+			<aside class="contact-highlight-card" aria-label="Engagement de réponse">
+				<div class="contact-highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
 				<strong>Un échange simple et direct.</strong>
 				<p>Votre demande reste confidentielle et ne vous engage à rien.</p>
 			</aside>
@@ -73,32 +74,56 @@
 				<h2 id="contact-form-title">Parlez-moi de votre projet</h2>
 			</div>
 
-			<form class="form-grid" action="https://formsubmit.co/lonaloraz@gmail.com" method="post" aria-label="Formulaire de contact">
+			<form class="form-grid contact-form-grid" action="https://formsubmit.co/lonaloraz@gmail.com" method="post" aria-label="Formulaire de contact">
 				<div>
-					<label for="name">Nom</label>
-					<input id="name" name="name" type="text" autocomplete="name" required aria-label="Votre nom">
-				</div>
-
-				<div>
-					<label for="email">Email</label>
-					<input id="email" name="email" type="email" autocomplete="email" required aria-label="Votre adresse email">
+					<label for="name">Votre nom</label>
+					<input id="name" name="name" type="text" autocomplete="name" required placeholder="Ex : Camille Martin" aria-label="Votre nom">
 				</div>
 
 				<div>
-					<label for="need">Description du besoin</label>
-					<textarea id="need" name="need" required aria-label="Décrivez votre besoin" placeholder="Quel sujet souhaitez-vous analyser ou améliorer ?"></textarea>
+					<label for="email">Votre email professionnel</label>
+					<input id="email" name="email" type="email" autocomplete="email" required placeholder="Ex : vous@entreprise.fr" aria-label="Votre email professionnel">
 				</div>
 
-				<div class="actions">
-					<button class="button" type="submit" aria-label="Envoyer ma demande">Envoyer ma demande</button>
+				<div class="contact-form-field-full">
+					<label for="need">Décrivez votre besoin</label>
+					<textarea id="need" name="need" required aria-label="Décrivez votre besoin" placeholder="Ex : Analyse des ventes e-commerce ou dashboard Power BI pour le service marketing"></textarea>
 				</div>
 
-				<p class="reassurance">⏱ Réponse sous 24h · 🔒 Confidentialité garantie</p>
+				<div>
+					<label for="project-type">Type de projet <span class="contact-field-optional">(optionnel)</span></label>
+					<select id="project-type" name="project_type" aria-label="Type de projet">
+						<option value="">Sélectionnez un type de projet</option>
+						<option value="dashboard">Dashboard</option>
+						<option value="audit">Audit de données</option>
+						<option value="automation">Automatisation</option>
+						<option value="other">Autre</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="budget">Budget estimé <span class="contact-field-optional">(optionnel)</span></label>
+					<select id="budget" name="budget" aria-label="Budget estimé">
+						<option value="">Sélectionnez une fourchette</option>
+						<option value="under-2k">&lt; 2k€</option>
+						<option value="2k-5k">2k€ - 5k€</option>
+						<option value="over-5k">&gt; 5k€</option>
+					</select>
+				</div>
+
+				<div class="contact-form-actions">
+					<div class="actions">
+						<button class="button contact-submit-button" type="submit" aria-label="Envoyer ma demande">Envoyer ma demande</button>
+					</div>
+				</div>
+
+				<p class="contact-form-reassurance">Réponse sous 24h - Sans engagement</p>
 			</form>
 		</section>
 
 		<section id="booking" aria-labelledby="booking-title">
-			<div class="hero-note">
+			<div class="contact-booking-card">
+				<div class="contact-booking-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
 				<p class="eyebrow">Prendre rendez-vous</p>
 				<h2 id="booking-title">Un premier échange, simplement</h2>
 				<p>La réservation en ligne sera ajoutée prochainement. En attendant, envoyez-moi votre besoin via le formulaire et je vous répondrai sous 24h.</p>
@@ -121,31 +146,37 @@
 				<h2 id="contact-info-title">Restons en contact</h2>
 			</div>
 
-			<div class="grid">
-				<article class="card">
+			<div class="grid contact-channels-grid">
+				<article class="card contact-channel-card">
+					<div class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
 					<h3>Email professionnel</h3>
 					<p><a href="mailto:lonaloraz@gmail.com">lonaloraz@gmail.com</a></p>
 				</article>
 
-				<article class="card">
+				<article class="card contact-channel-card">
+					<div class="contact-channel-icon contact-channel-icon--letter" aria-hidden="true">in</div>
 					<h3>LinkedIn</h3>
 					<p><a href="https://www.linkedin.com/in/razanakoto-lovatahiana-nomenjanahary-4060aa2a6/" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur LinkedIn</a></p>
 				</article>
 
-				<article class="card">
+				<article class="card contact-channel-card">
+					<div class="contact-channel-icon contact-channel-icon--letter" aria-hidden="true">&lt;/&gt;</div>
 					<h3>GitHub</h3>
 					<p><a href="https://github.com/lona-dotcom" target="_blank" rel="noopener noreferrer">Consultez mes projets GitHub</a></p>
 				</article>
 
-				<article class="card">
+				<article class="card contact-channel-card">
+					<div class="contact-channel-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
 					<h3>Confidentialité</h3>
 					<p>Un accord de confidentialité (NDA) est disponible sur demande.</p>
 				</article>
-				<article class="card">
+				<article class="card contact-channel-card">
+					<div class="contact-channel-icon contact-channel-icon--letter" aria-hidden="true">X</div>
 					<h3>X</h3>
 					<p><a href="https://x.com/lonaloraz" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur X</a></p>
 				</article>
-				<article class="card">
+				<article class="card contact-channel-card">
+					<div class="contact-channel-icon contact-channel-icon--letter" aria-hidden="true">f</div>
 					<h3>Facebook</h3>
 					<p><a href="https://www.facebook.com/profile.php?id=61570971295771" target="_blank" rel="noopener noreferrer">Retrouvez-moi sur facebook</a></p>
 				</article>
@@ -154,7 +185,8 @@
 		</section>
 
 		<section id="privacy" aria-labelledby="privacy-title">
-			<div class="hero-note">
+			<div class="contact-privacy-card">
+				<div class="contact-privacy-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></div>
 				<p class="eyebrow">Vos données</p>
 				<h2 id="privacy-title">Une demande traitée avec discrétion</h2>
 				<p>Les informations transmises servent uniquement à répondre à votre demande. Consultez la <a href="politique-confidentialite.html">politique de confidentialité</a> pour connaître vos droits et les modalités de traitement.</p>
