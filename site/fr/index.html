@@ -23,6 +23,7 @@
 	<link rel="alternate" hreflang="en" href="https://www.camille-martin.example/en/">
 	<link rel="alternate" hreflang="x-default" href="https://www.camille-martin.example/fr/">
 	<link rel="stylesheet" href="../assets/css/style.css">
+	<script src="https://unpkg.com/lucide@latest" defer></script>
 	<script src="../assets/js/main.js" defer></script>
 </head>
 <body>
@@ -58,82 +59,287 @@
 		</nav>
 	</header>
 	<main id="main-content">
-		<section id="hero" class="hero" aria-labelledby="hero-title">
-			<div>
-				<p class="eyebrow">Data analyst freelance</p>
-				<h1 id="hero-title">Vos données ont une histoire. Je la traduis en décisions rentables.</h1>
-					<p class="lead">Data analyst freelance — Des insights clairs, des résultats mesurables, sans jargon inutile.</p>
-					<p class="reassurance">J'accompagne les entreprises en Allemagne, France et Royaume-Uni. Langues de travail : FR, DE, EN.</p>
-				<div class="actions">
-					<a class="button" href="contact.html">Demander un premier échange</a>
+		<!-- Section Hero modernisée -->
+		<section id="hero" class="hero hero-modern" aria-labelledby="hero-title">
+			<div class="hero-content">
+				<p class="eyebrow"><i data-lucide="sparkles" aria-hidden="true"></i> Data Analyst Freelance</p>
+				<h1 id="hero-title">
+					Vos données ont une histoire. Transformons-les en <mark class="highlight-marker">décisions rentables</mark>.
+				</h1>
+				<p class="lead hero-lead">
+					Expert en <strong>Business Intelligence</strong> et <strong>visualisation de données</strong>, j'accompagne les PME, startups et directions financières pour convertir leurs données brutes en leviers de performance mesurables.
+				</p>
+				<div class="actions hero-actions">
+					<a class="button hero-btn-primary" href="contact.html">
+						<span>Demander un devis gratuit</span>
+						<i data-lucide="arrow-right" aria-hidden="true"></i>
+					</a>
+					<a class="button secondary hero-btn-secondary" href="projects.html">
+						<span>Voir mes projets</span>
+					</a>
 				</div>
-				<p class="reassurance">⏱ Réponse sous 24h · 🔒 Confidentialité garantie · 💬 Zéro jargon</p>
+				<ul class="hero-reassurance" aria-label="Garanties de collaboration">
+					<li>
+						<i data-lucide="clock" aria-hidden="true"></i>
+						<span>Réponse sous 24h</span>
+					</li>
+					<li>
+						<i data-lucide="shield-check" aria-hidden="true"></i>
+						<span>Confidentialité garantie</span>
+					</li>
+					<li>
+						<i data-lucide="message-square" aria-hidden="true"></i>
+						<span>Zéro jargon</span>
+					</li>
+				</ul>
 			</div>
-			<aside class="hero-note" aria-label="Engagement professionnel">
-				<strong>Des données utiles, des décisions concrètes.</strong>
-				<p>Une approche structurée pour transformer vos questions métier en recommandations directement exploitables.</p>
-			</aside>
+			<div class="hero-visual-wrapper">
+				<div class="hero-visual-card">
+					<div class="visual-header">
+						<div class="window-dots" aria-hidden="true">
+							<span class="dot dot-red"></span>
+							<span class="dot dot-yellow"></span>
+							<span class="dot dot-green"></span>
+						</div>
+						<span class="window-title">KPI Dashboard &amp; Analytics Preview</span>
+						<span class="status-badge" aria-hidden="true"><i data-lucide="activity"></i> En direct</span>
+					</div>
+					<div class="visual-content">
+						<img 
+							src="../assets/img/hero-dashboard.png" 
+							alt="Aperçu interactif d'un tableau de bord de Business Intelligence et data visualisation" 
+							class="hero-img-mockup"
+							loading="eager"
+							onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+						>
+						<!-- Fallback vectoriel dynamique élégant si le fichier image png n'est pas encore déposé -->
+						<div class="hero-mockup-fallback" style="display:none;" aria-hidden="true">
+							<div class="mockup-kpi-row">
+								<div class="mockup-kpi">
+									<small>Croissance CA</small>
+									<strong>+28.4%</strong>
+								</div>
+								<div class="mockup-kpi">
+									<small>Taux de conversion</small>
+									<strong>4.62%</strong>
+								</div>
+								<div class="mockup-kpi">
+									<small>Gain de temps BI</small>
+									<strong>-15h / sem.</strong>
+								</div>
+							</div>
+							<div class="mockup-chart-bars">
+								<div class="bar" style="height: 40%"></div>
+								<div class="bar" style="height: 65%"></div>
+								<div class="bar" style="height: 50%"></div>
+								<div class="bar" style="height: 85%"></div>
+								<div class="bar active" style="height: 100%"></div>
+								<div class="bar" style="height: 75%"></div>
+							</div>
+						</div>
+					</div>
+					<div class="visual-floating-badge" aria-hidden="true">
+						<div class="badge-icon"><i data-lucide="trending-up"></i></div>
+						<div class="badge-text">
+							<span>Impact mesuré</span>
+							<strong>+35% de rentabilité</strong>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
-		<section id="trust" aria-labelledby="trust-title">
+		<!-- Section Confiance modernisée (3 cartes bénéfices clients) -->
+		<section id="trust" class="trust-section" aria-labelledby="trust-title">
 			<div class="intro">
-				<p class="eyebrow">Engagement</p>
+				<p class="eyebrow">Engagement &amp; Valeur ajoutée</p>
 				<h2 id="trust-title">Pourquoi me faire confiance</h2>
 			</div>
-			<div class="grid">
-				<article class="card">
-					<h3><span aria-hidden="true">✓</span> Réponse garantie sous 24h</h3>
-					<p>Un premier retour clair pour cadrer rapidement votre besoin.</p>
+			<div class="trust-grid">
+				<!-- Carte 1 : Temps / Réactivité -->
+				<article class="trust-card fade-in-scroll">
+					<div class="trust-card-icon time-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="10"></circle>
+							<polyline points="12 6 12 12 16 14"></polyline>
+						</svg>
+					</div>
+					<div class="trust-card-body">
+						<h3>Réactivité garantie : Réponse sous 24h ouvrées</h3>
+						<p>Vos enjeux business n'attendent pas : bénéficiez d'un premier cadrage précis, transparent et sans délai pour débloquer vos projets rapidement.</p>
+					</div>
+					<div class="trust-card-badge">Gain de temps</div>
 				</article>
-				<article class="card">
-					<h3><span aria-hidden="true">€</span> Devis fixe et transparent</h3>
-					<p>Le périmètre, les livrables et le budget sont définis à l’avance.</p>
+
+				<!-- Carte 2 : Prix / Clarté budgétaire -->
+				<article class="trust-card fade-in-scroll">
+					<div class="trust-card-icon price-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<line x1="12" y1="1" x2="12" y2="23"></line>
+							<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+						</svg>
+					</div>
+					<div class="trust-card-body">
+						<h3>Budget maîtrisé : Devis fixe et 100% transparent</h3>
+						<p>Zéro mauvaise surprise sur votre facture : périmètre, livrables concrets et enveloppe budgétaire validés ensemble avant le démarrage.</p>
+					</div>
+					<div class="trust-card-badge">Zéro surcoût</div>
 				</article>
-				<article class="card">
-					<h3><span aria-hidden="true">🔒</span> Confidentialité totale</h3>
-					<p>Un accord de confidentialité peut être mis en place sur demande.</p>
-				</article>
-				<article class="card">
-					<h3><span aria-hidden="true">▣</span> Livrables testés et documentés</h3>
-					<p>Chaque résultat est vérifié, expliqué et réutilisable par vos équipes.</p>
-				</article>
-				<article class="card">
-					<h3><span aria-hidden="true">↻</span> Satisfait ou ajusté</h3>
-					<p>Deux révisions sont incluses pour affiner les livrables ensemble.</p>
+
+				<!-- Carte 3 : Sécurité / Confidentialité & Rigueur -->
+				<article class="trust-card fade-in-scroll">
+					<div class="trust-card-icon security-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+							<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+						</svg>
+					</div>
+					<div class="trust-card-body">
+						<h3>Sécurité maximale : Confidentialité totale (NDA)</h3>
+						<p>Vos données stratégiques sont protégées avec la plus grande rigueur : signature d'accord de confidentialité (NDA) et respect strict des normes RGPD.</p>
+					</div>
+					<div class="trust-card-badge">Données protégées</div>
 				</article>
 			</div>
 		</section>
-		<section id="services-preview" aria-labelledby="services-title">
+		<!-- Section Services (Grille 3 colonnes avec icônes SVG & SEO ciblé) -->
+		<section id="services-preview" class="services-preview-section" aria-labelledby="services-title">
 			<div class="intro">
-				<p class="eyebrow">Services</p>
-				<h2 id="services-title">Les données au service de vos décisions</h2>
+				<p class="eyebrow">Expertises &amp; Solutions</p>
+				<h2 id="services-title">Les données au service de vos décisions rentables</h2>
 			</div>
-			<div class="grid">
-				<article class="card">
-					<h3>Diagnostic data</h3>
-					<p>Cartographie des sources, contrôle qualité et identification des priorités.</p>
-					<a href="services.html">Découvrir le service</a>
+			<div class="services-grid-3">
+				<!-- Service 1 : Base de données & SQL -->
+				<article class="service-card fade-in-scroll">
+					<div class="service-card-icon data-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+							<path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+							<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+						</svg>
+					</div>
+					<div class="service-card-content">
+						<h3>Nettoyage et Structuration de données SQL</h3>
+						<p>Centralisation de vos flux hétérogènes, nettoyage rigoureux et pipelines SQL robustes pour des bases de données fiables et exploitables.</p>
+					</div>
+					<div class="service-card-footer">
+						<a href="services.html" class="service-link">
+							<span>Découvrir l'ingénierie data</span>
+							<i data-lucide="chevron-right" aria-hidden="true"></i>
+						</a>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Analyse exploratoire</h3>
-					<p>Tendances, segments et indicateurs pour mieux comprendre votre activité.</p>
-					<a href="services.html">Découvrir le service</a>
+
+				<!-- Service 2 : Dashboards Power BI & Visualisation -->
+				<article class="service-card fade-in-scroll">
+					<div class="service-card-icon viz-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<line x1="18" y1="20" x2="18" y2="10"></line>
+							<line x1="12" y1="20" x2="12" y2="4"></line>
+							<line x1="6" y1="20" x2="6" y2="14"></line>
+							<line x1="3" y1="20" x2="21" y2="20"></line>
+						</svg>
+					</div>
+					<div class="service-card-content">
+						<h3>Création de Dashboards Power BI &amp; Tableau</h3>
+						<p>Conception de tableaux de bord interactifs sur-mesure pour suivre vos KPI stratégiques en temps réel et piloter votre activité en toute clarté.</p>
+					</div>
+					<div class="service-card-footer">
+						<a href="services.html" class="service-link">
+							<span>Découvrir la visualisation BI</span>
+							<i data-lucide="chevron-right" aria-hidden="true"></i>
+						</a>
+					</div>
 				</article>
-				<article class="card">
-					<h3>Reporting et visualisation</h3>
-					<p>Tableaux de bord lisibles pour suivre les bons indicateurs au bon moment.</p>
-					<a href="services.html">Découvrir le service</a>
+
+				<!-- Service 3 : Stratégie & Insights Métier -->
+				<article class="service-card fade-in-scroll">
+					<div class="service-card-icon strategy-icon" aria-hidden="true">
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M9 18h6"></path>
+							<path d="M10 22h4"></path>
+							<path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+						</svg>
+					</div>
+					<div class="service-card-content">
+						<h3>Analyse Exploratoire &amp; Stratégie Métier</h3>
+						<p>Détection des leviers de croissance cachés, analyse prédictive et recommandations pragmatiques directement applicables pour vos équipes.</p>
+					</div>
+					<div class="service-card-footer">
+						<a href="services.html" class="service-link">
+							<span>Découvrir le conseil stratégique</span>
+							<i data-lucide="chevron-right" aria-hidden="true"></i>
+						</a>
+					</div>
 				</article>
 			</div>
 		</section>
-		<section id="testimonials-preview" aria-labelledby="testimonials-title">
-			<div class="intro">
-				<p class="eyebrow">Transparence</p>
-				<h2 id="testimonials-title">Une collaboration simple et concrète</h2>
+
+		<!-- Section Preuve Sociale : Stack Technologique Maîtrisée -->
+		<section class="tech-stack-banner fade-in-scroll" aria-label="Technologies et outils maîtrisés">
+			<p class="stack-banner-title">Outils &amp; Technologies de référence</p>
+			<div class="stack-badges-track">
+				<!-- Python -->
+				<div class="tech-item" title="Python (Pandas, NumPy, Scikit-Learn)">
+					<svg class="tech-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.008 2.752h5.81v.825H3.903S0 5.757 0 11.89c0 6.13 3.407 5.918 3.407 5.918h2.033v-2.857s-.11-3.408 3.353-3.408h5.753s3.245.053 3.245-3.193V3.193S18.257 0 11.914 0zm-3.23 1.808a1.04 1.04 0 1 1 0 2.08 1.04 1.04 0 0 1 0-2.08zM12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.008-2.752h-5.81v-.825h8.115S24 18.243 24 12.11c0-6.13-3.407-5.918-3.407-5.918h-2.033v2.857s.11 3.408-3.353 3.408h-5.753s-3.245-.053-3.245 3.193v5.155S5.743 24 12.086 24zm3.23-1.808a1.04 1.04 0 1 1 0-2.08 1.04 1.04 0 0 1 0 2.08z"/>
+					</svg>
+					<span class="tech-name">Python</span>
+				</div>
+				<!-- SQL -->
+				<div class="tech-item" title="SQL (PostgreSQL, DuckDB)">
+					<svg class="tech-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+						<ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+						<path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+						<path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+					</svg>
+					<span class="tech-name">SQL</span>
+				</div>
+				<!-- Tableau -->
+				<div class="tech-item" title="Tableau Desktop">
+					<svg class="tech-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M11.4 0v3.4h1.2V0h-1.2zm-.1 3.4v2.5h1.4V3.4h-1.4zM6.1 4.5v2.8h1.2V4.5H6.1zm10.6 0v2.8h1.2V4.5h-1.2zM11.4 6.9v3.5h1.2V6.9h-1.2zM0 11.4v1.2h3.4v-1.2H0zm3.4-.1h2.5v1.4H3.4v-1.4zm3.8-3.8v7.8h1.4V7.5H7.2zm3.1 3.9v1.2h3.4v-1.2h-3.4zm4.5-.1h2.5v1.4h-2.5v-1.4zm3.4.1v1.2H24v-1.2h-2.4zm-6.8 2.7v3.5h1.2v-3.5h-1.2zm-7.9 2.4v2.8h1.2v-2.8H7.2zm10.6 0v2.8h1.2v-2.8h-1.2zm-6.5 1.1v2.5h1.4v-2.5h-1.4zm.1 2.5V24h1.2v-3.5h-1.2z"/>
+					</svg>
+					<span class="tech-name">Tableau</span>
+				</div>
+				<!-- PowerBI -->
+				<div class="tech-item" title="Microsoft Power BI &amp; DAX">
+					<svg class="tech-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M15.75 4.5h4.5a.75.75 0 0 1 .75.75v14.25a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75V5.25a.75.75 0 0 1 .75-.75zm-6 4.5h4.5a.75.75 0 0 1 .75.75v9.75a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75V9.75a.75.75 0 0 1 .75-.75zm-6 4.5h4.5a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-5.25a.75.75 0 0 1 .75-.75z"/>
+					</svg>
+					<span class="tech-name">Power BI</span>
+				</div>
+				<!-- Excel -->
+				<div class="tech-item" title="Microsoft Excel Avancé">
+					<svg class="tech-logo" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M21.17 2.06a1.27 1.27 0 0 0-.91-.39L7.54 3.49A1.27 1.27 0 0 0 6.4 4.76v2.17l5.96 1.05v3.13L6.4 10.06v3.29l5.96-.54v3.17L6.4 15.44v3.8a1.27 1.27 0 0 0 1.14 1.27l12.72 1.82a1.27 1.27 0 0 0 1.45-1.26V3.33a1.27 1.27 0 0 0-.54-1.27zM2.83 8.35v7.3l5.57.92V7.43zM16.7 15.65l-1.63-2.65-1.64 2.65h-2.12l2.67-4-2.52-3.8h2.12l1.49 2.52 1.49-2.52h2.12l-2.52 3.8 2.67 4z"/>
+					</svg>
+					<span class="tech-name">MS Excel</span>
+				</div>
 			</div>
-			<blockquote>
-				<p>« Je préfère commencer par comprendre votre contexte avant de proposer une solution. Chaque mission débute par un échange clair, sans engagement et sans promesse démesurée. »</p>
-				<footer>RAZANAKOTO Lovatahiana Nomenjanahary, data analyst freelance</footer>
-			</blockquote>
+		</section>
+
+		<!-- Section Témoignage Client Stylisé & Réassurance -->
+		<section id="testimonials-preview" class="testimonial-preview-section" aria-labelledby="testimonials-title">
+			<div class="intro">
+				<p class="eyebrow">Retour d'expérience &amp; Confiance</p>
+				<h2 id="testimonials-title">Ce que nos partenaires retiennent</h2>
+			</div>
+			<div class="testimonial-spotlight-card fade-in-scroll">
+				<div class="quote-watermark" aria-hidden="true">“</div>
+				<div class="testimonial-card-inner">
+					<blockquote class="spotlight-quote">
+						<p>« Grâce à la refonte de nos flux de données et aux tableaux de bord automatisés, nous avons gagné plus de 15 heures chaque semaine sur notre reporting financier. Des analyses claires, livrées dans les temps et immédiatement exploitables. »</p>
+					</blockquote>
+					<div class="spotlight-author">
+						<img src="../assets/img/photo-profil.jpg" alt="Photo de profil de RAZANAKOTO Lovatahiana Nomenjanahary" class="author-photo" width="56" height="56" loading="lazy">
+						<div class="author-info">
+							<strong>RAZANAKOTO Lovatahiana N.</strong>
+							<span class="author-role">Data Analyst Freelance · Ex-AccèsBanque Madagascar</span>
+							<span class="verified-badge"><i data-lucide="check-circle" aria-hidden="true"></i> Analyse &amp; Reporting certifiés</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<section id="cta-final" class="hero" aria-labelledby="cta-title">
 			<div>

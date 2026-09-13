@@ -67,3 +67,32 @@ if (menuButton && navigation) {
 
 const year = document.querySelector('[data-current-year]');
 if (year) year.textContent = new Date().getFullYear();
+
+// Initialisation des icônes Lucide si la bibliothèque est chargée
+if (typeof lucide !== 'undefined' && lucide.createIcons) {
+  lucide.createIcons();
+}
+
+// Animation d'apparition au scroll (fade-in)
+if ('IntersectionObserver' in window) {
+  const scrollObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll('.fade-in-scroll').forEach((element) => {
+    scrollObserver.observe(element);
+  });
+} else {
+  // Fallback si pas de support IntersectionObserver
+  document.querySelectorAll('.fade-in-scroll').forEach((element) => {
+    element.classList.add('is-visible');
+  });
+}
