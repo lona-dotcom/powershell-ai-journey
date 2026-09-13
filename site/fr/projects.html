@@ -51,13 +51,13 @@
 		</nav>
 	</header>
 	<main id="main-content">
-		<section id="projects-hero" class="hero" aria-labelledby="projects-title">
-			<div>
+		<section id="projects-hero" class="projects-hero-section" aria-labelledby="projects-title">
+			<div class="projects-hero-content">
 				<p class="eyebrow">Études de cas</p>
 				<h1 id="projects-title">Des projets qui transforment les données en décisions</h1>
 				<p class="lead">Découvrez comment j'aide les PME et startups à transformer leurs données brutes en décisions concrètes — dashboards clairs, analyses actionnables, zéro jargon.</p>
 			</div>
-			<aside class="hero-note" aria-label="Approche projet">
+			<aside class="projects-highlight-card" aria-label="Approche projet">
 				<strong>Une analyse utile commence par une bonne question.</strong>
 				<p>Chaque projet relie les données disponibles à une décision concrète pour votre activité.</p>
 			</aside>
@@ -67,84 +67,94 @@
 				<p class="eyebrow">Projets sélectionnés</p>
 				<h2 id="projects-grid-title">Des problématiques métier, des réponses data</h2>
 			</div>
-			<div class="grid">
-				<article class="card">
+			<div class="grid projects-grid">
+				<article class="card project-card project-card--ecommerce">
 					<figure class="project-visual" aria-label="Aperçu du dashboard de pilotage e-commerce">
 						<div aria-hidden="true">[Tableau de bord interactif e-commerce]</div>
 						<figcaption>Aperçu d'un dashboard de pilotage des ventes multi-canaux.</figcaption>
 					</figure>
-					<p class="project-meta">E-commerce · PME</p>
-					<h3>Dashboard e-commerce : pilotage des ventes en temps réel</h3>
+					<div class="project-card-heading">
+						<span class="project-sector-badge">E-COMMERCE</span>
+						<div class="project-title-row">
+							<span class="project-icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16v-4"/><path d="M12 16V7"/><path d="M17 16v-7"/></svg>
+							</span>
+							<h3>Dashboard e-commerce : pilotage des ventes en temps réel</h3>
+						</div>
+					</div>
 					<h4>Challenge</h4>
 					<p>Les données de ventes étaient réparties entre plusieurs sources. L'équipe suivait ses indicateurs avec retard et manquait de visibilité sur les produits et canaux les plus performants.</p>
 					<h4>Solution</h4>
 					<p>Consolidation des données avec SQL, préparation des indicateurs avec Python et création d'un dashboard Tableau avec filtres par période, canal, produit et zone géographique.</p>
 					<h4>Résultats</h4>
-					<ul>
-						<li><strong data-result="30">Réduction de 30 % des délais</strong> de reporting.</li>
-						<li><strong data-result="15">15 % de marge récupérable</strong> sur les références sous-performantes.</li>
-						<li>Une vision partagée des ventes pour les équipes commerciales.</li>
-					</ul>
+					<div class="project-kpis"><div><strong>-30%</strong><span>délais de reporting</span></div><div><strong>15%</strong><span>marge récupérable</span></div></div>
+					<p class="project-result-note">Une vision partagée des ventes pour les équipes commerciales.</p>
 					<h4>Outils et technologies</h4>
 					<ul class="tag-list" aria-label="Outils utilisés"><li>SQL</li><li>Python</li><li>Tableau</li><li>Excel</li></ul>
 				</article>
-				<article class="card">
+				<article class="card project-card project-card--saas">
 					<figure class="project-visual" aria-label="Aperçu de l'analyse d'attrition client et segmentation">
 						<div aria-hidden="true">[Graphique de segmentation et risque d'attrition]</div>
 						<figcaption>Aperçu d'un score de risque prédictif pour la rétention client.</figcaption>
 					</figure>
-					<p class="project-meta">SaaS · Entreprise en croissance</p>
-					<h3>Analyse churn : identifier les clients à risque</h3>
+					<div class="project-card-heading">
+						<span class="project-sector-badge">SAAS</span>
+						<div class="project-title-row">
+							<span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/><path d="M8 10.5h5M10.5 8v5"/></svg></span>
+							<h3>Analyse churn : identifier les clients à risque</h3>
+						</div>
+					</div>
 					<h4>Challenge</h4>
 					<p>Le taux de résiliation augmentait sans cause clairement identifiée. L'entreprise souhaitait repérer les signaux faibles avant le départ des clients.</p>
 					<h4>Solution</h4>
 					<p>Analyse exploratoire avec Python, segmentation des clients selon l'usage du produit, l'ancienneté et les interactions avec le support, puis construction d'un score de risque interprétable.</p>
 					<h4>Résultats</h4>
-					<ul>
-						<li><strong data-result="22">22 % des comptes à risque identifiés</strong> avant renouvellement.</li>
-						<li><strong data-result="12">Réduction de 12 % du churn ciblé</strong> après activation des actions de rétention.</li>
-						<li>Un plan d'action priorisé pour l'équipe customer success.</li>
-					</ul>
+					<div class="project-kpis"><div><strong>22%</strong><span>comptes à risque identifiés</span></div><div><strong>-12%</strong><span>churn ciblé</span></div></div>
+					<p class="project-result-note">Un plan d'action priorisé pour l'équipe customer success.</p>
 					<h4>Outils et technologies</h4>
 					<ul class="tag-list" aria-label="Outils utilisés"><li>Python</li><li>pandas</li><li>SQL</li><li>Jupyter</li></ul>
 				</article>
-				<article class="card">
+				<article class="card project-card project-card--data-quality">
 					<figure class="project-visual" aria-label="Aperçu du rapport de qualité et conformité des données">
 						<div aria-hidden="true">[Rapport de contrôle qualité et dédoublonnage]</div>
 						<figcaption>Aperçu de la normalisation et de l'assainissement de base client.</figcaption>
 					</figure>
-					<p class="project-meta">Services B2B · Base clients</p>
-					<h3>Nettoyage et fiabilisation d'une base client de 50 000 lignes</h3>
+					<div class="project-card-heading">
+						<span class="project-sector-badge">SERVICES B2B</span>
+						<div class="project-title-row">
+							<span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></span>
+							<h3>Nettoyage et fiabilisation d'une base client de 50 000 lignes</h3>
+						</div>
+					</div>
 					<h4>Challenge</h4>
 					<p>La base client contenait des doublons, des formats incohérents et des informations incomplètes. Les équipes ne pouvaient pas mesurer fiablement la performance commerciale.</p>
 					<h4>Solution</h4>
 					<p>Profilage de la base, normalisation des champs, détection des doublons avec Python et création de règles de contrôle documentées pour les prochains imports.</p>
 					<h4>Résultats</h4>
-					<ul>
-						<li><strong data-result="18">Réduction de 18 % des doublons</strong> détectés.</li>
-						<li><strong data-result="96">96 % des fiches rendues exploitables</strong> pour le reporting.</li>
-						<li>Un processus reproductible de contrôle qualité.</li>
-					</ul>
+					<div class="project-kpis"><div><strong>-18%</strong><span>doublons détectés</span></div><div><strong>96%</strong><span>fiches exploitables</span></div></div>
+					<p class="project-result-note">Un processus reproductible de contrôle qualité.</p>
 					<h4>Outils et technologies</h4>
 					<ul class="tag-list" aria-label="Outils utilisés"><li>SQL</li><li>Python</li><li>PostgreSQL</li><li>Excel</li></ul>
 				</article>
-				<article class="card">
+				<article class="card project-card project-card--marketing">
 					<figure class="project-visual" aria-label="Aperçu de l'analyse de rentabilité et performance marketing">
 						<div aria-hidden="true">[Tableau de bord de performance et coût d'acquisition]</div>
 						<figcaption>Aperçu du suivi consolidé des campagnes d'acquisition et du ROI.</figcaption>
 					</figure>
-					<p class="project-meta">Marketing · Marque digitale</p>
-					<h3>Mesure de la performance des campagnes d'acquisition</h3>
+					<div class="project-card-heading">
+						<span class="project-sector-badge">MARKETING</span>
+						<div class="project-title-row">
+							<span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h17"/><path d="m7 15 4-4 3 2 5-7"/><path d="M16 6h3v3"/></svg></span>
+							<h3>Mesure de la performance des campagnes d'acquisition</h3>
+						</div>
+					</div>
 					<h4>Challenge</h4>
 					<p>Les investissements publicitaires étaient suivis par canal, mais l'entreprise ne disposait pas d'une lecture consolidée du coût d'acquisition et de la contribution réelle de chaque campagne.</p>
 					<h4>Solution</h4>
 					<p>Unification des données publicitaires et commerciales, définition d'indicateurs communs, puis création d'un reporting automatisé avec SQL et Tableau.</p>
 					<h4>Résultats</h4>
-					<ul>
-						<li><strong data-result="25">25 % de temps économisé</strong> sur le reporting hebdomadaire.</li>
-						<li><strong data-result="14">14 % de budget réalloué</strong> vers les campagnes les plus rentables.</li>
-						<li>Une lecture homogène du parcours d'acquisition.</li>
-					</ul>
+					<div class="project-kpis"><div><strong>-25%</strong><span>temps de reporting</span></div><div><strong>14%</strong><span>budget réalloué</span></div></div>
+					<p class="project-result-note">Une lecture homogène du parcours d'acquisition.</p>
 					<h4>Outils et technologies</h4>
 					<ul class="tag-list" aria-label="Outils utilisés"><li>SQL</li><li>Tableau</li><li>Looker Studio</li><li>Python</li></ul>
 				</article>
@@ -155,18 +165,28 @@
 				<p class="eyebrow">Méthode</p>
 				<h2 id="case-study-format-title">Challenge &gt; Solution &gt; Résultats</h2>
 			</div>
-			<div class="grid">
-				<article class="card"><h3>Challenge</h3><p>Nous clarifions la question métier, les contraintes et la décision que les données doivent aider à prendre.</p></article>
-				<article class="card"><h3>Solution</h3><p>Je sélectionne les sources, les méthodes et les outils adaptés, puis je construis une analyse compréhensible et reproductible.</p></article>
-				<article class="card"><h3>Résultats</h3><p>Les conclusions sont traduites en indicateurs, recommandations et actions directement utilisables par vos équipes.</p></article>
-			</div>
+			<ol class="case-study-timeline">
+				<li class="case-study-step">
+					<div class="case-study-marker" aria-hidden="true">1</div>
+					<div><h3>Challenge</h3><p>Clarifier la question métier, les contraintes et la décision à prendre.</p></div>
+				</li>
+				<li class="case-study-step">
+					<div class="case-study-marker" aria-hidden="true">2</div>
+					<div><h3>Solution</h3><p>Sélectionner les données, méthodes et outils adaptés à votre contexte.</p></div>
+				</li>
+				<li class="case-study-step">
+					<div class="case-study-marker" aria-hidden="true">3</div>
+					<div><h3>Résultats</h3><p>Traduire l'analyse en indicateurs et actions directement utilisables.</p></div>
+				</li>
+			</ol>
 		</section>
-		<section id="cta-final" class="hero" aria-labelledby="cta-title">
-			<div>
+		<section id="cta-final" class="projects-cta-section" aria-labelledby="cta-title">
+			<div class="projects-cta-content">
 				<p class="eyebrow">Votre projet</p>
 				<h2 id="cta-title">Transformons votre problématique data en plan d'action</h2>
 				<p class="lead">Partagez votre contexte, vos objectifs et vos données disponibles. Réponse garantie sous 24h avec une première orientation claire, sans engagement.</p>
-				<div class="actions"><a class="button" href="contact.html">Parler de mon projet</a></div>
+				<div class="actions"><a class="button projects-cta-button" href="contact.html">Parler de mon projet</a></div>
+				<p class="projects-cta-reassurance">Réponse sous 24h - Sans engagement</p>
 			</div>
 		</section>
 	</main>
