@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog data analyst freelance | Conseils SEO, BI et analyses</title>
+  <meta name="description" content="Blog data analyst freelance : guides SEO, dashboards Power BI, SQL, Python, KPIs, reporting et optimisation des données pour PME et startups.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="RAZANAKOTO Lovatahiana Nomenjanahary">
+  <meta name="theme-color" content="#102a43">
+  <link rel="canonical" href="https://lona-dotcom.github.io/powershell-ai-journey/blog/">
+  <link rel="alternate" hreflang="fr" href="https://lona-dotcom.github.io/powershell-ai-journey/blog/">
+  <link rel="alternate" hreflang="de" href="https://lona-dotcom.github.io/powershell-ai-journey/de/">
+  <link rel="alternate" hreflang="en" href="https://lona-dotcom.github.io/powershell-ai-journey/en/">
+  <link rel="alternate" hreflang="x-default" href="https://lona-dotcom.github.io/powershell-ai-journey/fr/">
+  <meta property="og:title" content="Blog data analyst freelance | Conseils SEO, BI et analyses">
+  <meta property="og:description" content="Guides pratiques sur Power BI, SQL, Python, KPIs et reporting pour améliorer la performance de votre entreprise.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg">
+  <meta property="og:url" content="https://lona-dotcom.github.io/powershell-ai-journey/blog/">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog data analyst freelance | Conseils SEO, BI et analyses">
+  <meta name="twitter:description" content="Guides pratiques sur Power BI, SQL, Python, KPIs et reporting pour améliorer la performance de votre entreprise.">
+  <meta name="twitter:image" content="https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #101828;
+      --muted: #475467;
+      --primary: #102a43;
+      --primary-soft: #eaf2fb;
+      --accent: #b45309;
+      --line: #e5e7eb;
+      --shadow: 0 12px 30px rgba(16, 42, 67, 0.08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .site-header {
+      background: rgba(245, 247, 251, 0.94);
+      border-bottom: 1px solid rgba(16, 42, 67, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+    .navbar {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .02em;
+      color: var(--primary);
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-list a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .nav-list a:hover, .nav-list a:focus-visible { color: var(--accent); }
+    .blog-hero {
+      padding: 4rem 0 2rem;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 1rem 0 .75rem;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      color: var(--primary);
+    }
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 48rem;
+      margin: 0;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 0 5rem;
+    }
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .article-card:hover,
+    .article-card:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(16, 42, 67, 0.1);
+    }
+    .card-meta {
+      padding: 1rem 1rem 0;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .article-card h2 {
+      margin: 0;
+      padding: 0 1rem 0.75rem;
+      font-size: 1.35rem;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+    .article-card p {
+      margin: 0;
+      padding: 0 1rem 1.25rem;
+      color: var(--muted);
+      flex-grow: 1;
+    }
+    .card-footer {
+      padding: 0 1rem 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    @media (max-width: 640px) {
+      .nav-list { gap: .6rem; }
+      .navbar { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navigation principale">
+      <a class="brand" href="../fr/index.html">RAZANAKOTO L.N.</a>
+      <ul class="nav-list" aria-label="Navigation principale">
+        <li><a href="../fr/index.html">Accueil</a></li>
+        <li><a href="../fr/about.html">À propos</a></li>
+        <li><a href="../fr/services.html">Services</a></li>
+        <li><a href="../fr/projects.html">Projets</a></li>
+        <li><a href="../fr/contact.html">Contact</a></li>
+        <li><a href="index.html" aria-current="page">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="blog-hero" aria-labelledby="blog-title">
+      <p class="eyebrow">Blog</p>
+      <h1 id="blog-title">Guides pratiques pour piloter vos données et booster votre performance</h1>
+      <p class="lead">
+        Des articles conçus pour répondre aux questions réelles des PME et des équipes marketing, commerciale et opérationnelle.
+        Chaque sujet est pensé pour attirer du trafic organique et démontrer une expertise directement exploitable.
+      </p>
+    </section>
+
+    <section aria-label="Liste des articles du blog">
+      <div class="article-grid">
+        <a class="article-card" href="article-1.html">
+          <div class="card-meta">Power BI • 5 min</div>
+          <h2>Comment créer un dashboard Power BI pour une PME en 5 étapes</h2>
+          <p>Un guide concret pour structurer une analyse, choisir les bons KPI et concevoir un tableau de bord utile pour la décision.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-2.html">
+          <div class="card-meta">SQL • Python • 7 min</div>
+          <h2>SQL vs Python : quel outil choisir pour analyser ses données ?</h2>
+          <p>Comprenez les différences, les cas d'usage et les situations où chacun apporte le plus de valeur.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-3.html">
+          <div class="card-meta">KPI • e-commerce • 6 min</div>
+          <h2>Les 7 KPI essentiels pour piloter une activité e-commerce</h2>
+          <p>Les indicateurs qui permettent de surveiller la performance, la satisfaction client et la rentabilité de manière fiable.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-4.html">
+          <div class="card-meta">Python • data cleaning • 8 min</div>
+          <h2>Comment nettoyer des données sales avec Python (guide pratique)</h2>
+          <p>Découvrez les étapes clés pour corriger les doublons, les valeurs manquantes, les formats incohérents et les anomalies.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-5.html">
+          <div class="card-meta">Carrière • 5 min</div>
+          <h2>Data Analyst vs Data Scientist : quelles différences ?</h2>
+          <p>Un comparatif clair pour comprendre les missions, les outils et les compétences qui distinguent ces deux métiers.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-6.html">
+          <div class="card-meta">Tarifs • 4 min</div>
+          <h2>Combien coûte un Data Analyst Freelance en 2026 ?</h2>
+          <p>Un aperçu des fourchettes de prix, des critères de tarification et des bonnes pratiques pour budgétiser une mission data.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-7.html">
+          <div class="card-meta">Automatisation • 7 min</div>
+          <h2>Comment automatiser son reporting mensuel avec Python</h2>
+          <p>Un workflow simple pour consolider les exports, générer les tableaux et diffuser un tableau de bord sans tâches manuelles répétitives.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-8.html">
+          <div class="card-meta">Dashboard • 6 min</div>
+          <h2>Les erreurs à éviter lors de la création d'un dashboard</h2>
+          <p>Les pièges les plus fréquents qui rendent un dashboard peu lisible, peu utile et difficile à exploiter.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-9.html">
+          <div class="card-meta">RGPD • 5 min</div>
+          <h2>RGPD et analyse de données : ce que les PME doivent savoir</h2>
+          <p>Les bonnes pratiques pour utiliser les données de manière conforme, sécurisée et utile pour la performance.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+
+        <a class="article-card" href="article-10.html">
+          <div class="card-meta">ROI • 6 min</div>
+          <h2>Comment mesurer le ROI d'une analyse de données ?</h2>
+          <p>Un modèle simple pour calculer la valeur créée par une analyse data et la convertir en décisions d'investissement.</p>
+          <div class="card-footer">Lire l'article →</div>
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

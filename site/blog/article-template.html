@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comment créer un dashboard Power BI pour une PME en 5 étapes | Blog data analyst freelance</title>
+  <meta name="description" content="Guide pratique pour créer un dashboard Power BI pour PME en 5 étapes : définir les KPI, structurer les données, concevoir le reporting et piloter la performance.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="RAZANAKOTO Lovatahiana Nomenjanahary">
+  <meta property="og:title" content="Comment créer un dashboard Power BI pour une PME en 5 étapes | Blog data analyst freelance">
+  <meta property="og:description" content="Guide pratique pour créer un dashboard Power BI pour PME en 5 étapes : définir les KPI, structurer les données, concevoir le reporting et piloter la performance.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg">
+  <meta property="og:url" content="https://lona-dotcom.github.io/powershell-ai-journey/blog/article-template.html">
+  <meta property="article:published_time" content="2026-09-13T00:00:00+00:00">
+  <meta property="article:author" content="RAZANAKOTO Lovatahiana Nomenjanahary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Comment créer un dashboard Power BI pour une PME en 5 étapes | Blog data analyst freelance">
+  <meta name="twitter:description" content="Guide pratique pour créer un dashboard Power BI pour PME en 5 étapes : définir les KPI, structurer les données, concevoir le reporting et piloter la performance.">
+  <meta name="twitter:image" content="https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Comment créer un dashboard Power BI pour une PME en 5 étapes",
+    "description": "Guide pratique pour construire un dashboard Power BI adapté à une PME et orienté décision business.",
+    "author": {
+      "@type": "Person",
+      "name": "RAZANAKOTO Lovatahiana Nomenjanahary",
+      "jobTitle": "Data Analyst Freelance"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RAZANAKOTO L.N.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg"
+      }
+    },
+    "datePublished": "2026-09-13",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://lona-dotcom.github.io/powershell-ai-journey/blog/article-template.html"
+    },
+    "image": "https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg"
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #475467;
+      --primary: #102a43;
+      --primary-soft: #ebf3ff;
+      --accent: #b45309;
+      --line: #e5e7eb;
+      --table-head: #eef2f7;
+      --shadow: 0 10px 25px rgba(16, 42, 67, 0.08);
+      --max: 980px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.75;
+      background: var(--bg);
+      color: var(--text);
+    }
+    a { color: inherit; }
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    .article-shell {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 2rem 2rem 3rem;
+    }
+    .breadcrumb {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .75rem;
+    }
+    h1 {
+      margin: 1rem 0 1rem;
+      font-size: clamp(2.1rem, 3.5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      color: var(--primary);
+    }
+    .meta {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 1.5rem;
+    }
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: .8rem;
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      line-height: 1.25;
+      color: var(--primary);
+    }
+    h3 {
+      margin-top: 1.6rem;
+      margin-bottom: .5rem;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    p, li { color: var(--text); }
+    ul, ol {
+      padding-left: 1.3rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: .75rem .85rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--table-head);
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .callout {
+      background: linear-gradient(135deg, #f7fafc, #eff7ff);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin: 1.5rem 0;
+    }
+    .cta-box {
+      background: var(--primary);
+      border-radius: 18px;
+      color: white;
+      padding: 1.4rem 1.5rem;
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-block;
+      margin-top: .8rem;
+      padding: .8rem 1.1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .article-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 2rem;
+    }
+    .article-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    @media (max-width: 640px) {
+      .article-shell { padding: 1.2rem 1rem 2rem; }
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="article-shell" itemscope itemtype="https://schema.org/BlogPosting">
+      <div class="breadcrumb">
+        <a href="index.html">Blog</a> / <span>Guides</span>
+      </div>
+      <div class="eyebrow">Power BI</div>
+      <h1 itemprop="headline">Comment créer un dashboard Power BI pour une PME en 5 étapes</h1>
+      <div class="meta">
+        <time datetime="2026-09-13" itemprop="datePublished">13 septembre 2026</time>
+        · 5 min de lecture
+      </div>
+      <p class="lead" itemprop="description">
+        Un dashboard Power BI bien conçu permet à une PME de transformer ses données en décisions plus rapides et plus fiables.
+        Dans ce guide, nous allons voir comment créer un tableau de bord utile, lisible et orienté performance.
+      </p>
+
+      <h2>Pourquoi un dashboard Power BI est utile pour une PME ?</h2>
+      <p>
+        Une PME n'a pas besoin d'un outil complexe pour obtenir de la valeur. Elle a surtout besoin d'un tableau de bord qui centralise les KPI essentiels, met en avant les anomalies et aide les décideurs à agir dans le bon ordre.
+      </p>
+      <ul>
+        <li>Visualiser rapidement les performances commerciales</li>
+        <li>Identifier les écarts entre objectif et réalité</li>
+        <li>Suivre la rentabilité, le marketing et les opérations</li>
+        <li>Soutenir les décisions avec des données fiables</li>
+      </ul>
+
+      <h2>Étape 1 : définir les objectifs métier</h2>
+      <p>
+        Avant de créer le dashboard, il faut clarifier le problème métier à résoudre. À quoi servira ce tableau de bord ? Qui l'utilisera ? Quels indicateurs doivent apparaître en priorité ?
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Objectif</th>
+            <th>KPI à suivre</th>
+            <th>Décision visée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suivre les ventes</td>
+            <td>CA, marge, conversion</td>
+            <td> Ajuster les actions commerciales</td>
+          </tr>
+          <tr>
+            <td>Optimiser le marketing</td>
+            <td>Coût d'acquisition, ROAS</td>
+            <td> Réallouer le budget</td>
+          </tr>
+          <tr>
+            <td>Améliorer l'exploitation</td>
+            <td>Livraisons, délais, taux d'erreur</td>
+            <td> Corriger les points de friction</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Bonnes questions à poser</h3>
+      <ul>
+        <li>Quels indicateurs comptent vraiment pour la direction ?</li>
+        <li>Quels datasets sont déjà disponibles et fiables ?</li>
+        <li>Quel niveau de détail est nécessaire pour la prise de décision ?</li>
+      </ul>
+
+      <h2>Étape 2 : nettoyer et structurer les données</h2>
+      <p>
+        Le dashboard ne vaut que ce que vaut la donnée. Les erreurs de typage, les doublons ou les valeurs manquantes peuvent fausser les conclusions.
+      </p>
+      <div class="callout">
+        <strong>Point clé :</strong> il vaut mieux une base propre et simple qu'un tableau riche mais peu fiable.
+      </div>
+
+      <h3>Checklist de nettoyage</h3>
+      <ul>
+        <li>Supprimer les doublons</li>
+        <li>Standardiser les formats de date et de devise</li>
+        <li>Gérer les valeurs manquantes</li>
+        <li>Créer des dimensions claires (date, région, canal, produit)</li>
+      </ul>
+
+      <h2>Étape 3 : choisir les bons visuels</h2>
+      <p>
+        Le design du dashboard doit aider à la lecture, pas seulement à l'esthétique. Les bonnes visualisations répondent à des questions précises.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Visuel recommandé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Comment évolue le CA ?</td>
+            <td>Graphique linéaire</td>
+          </tr>
+          <tr>
+            <td>Quels segments performent le mieux ?</td>
+            <td>Barres ou histogramme</td>
+          </tr>
+          <tr>
+            <td>Quel est le mix de canal ?</td>
+            <td>Camembert ou treemap</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Étape 4 : concevoir une lecture claire</h2>
+      <p>
+        Un bon dashboard suit une logique de lecture. Commencez par les indicateurs de synthèse, puis approfondissez vers les détails à l'aide de filtres et de segments.
+      </p>
+      <ul>
+        <li>Mettre les KPI principaux en haut</li>
+        <li>Limiter le nombre de cartes visibles</li>
+        <li>Utiliser des filtres efficaces</li>
+        <li>Préserver le contraste visuel</li>
+      </ul>
+
+      <h2>Étape 5 : valider et diffuser le dashboard</h2>
+      <p>
+        La dernière étape consiste à tester le tableau de bord avec les utilisateurs concernés. Le but est de vérifier que les indicateurs sont bien compris, que les filtres fonctionnent et que les décisions peuvent être prises rapidement.
+      </p>
+
+      <h2>Conclusion</h2>
+      <p>
+        Créer un dashboard Power BI pour une PME ne consiste pas à tout centraliser. Il s'agit de sélectionner les bons KPI, d'organiser les données de manière fiable et de présenter les informations de façon claire pour la décision.
+      </p>
+      <div class="cta-box">
+        <h3>Besoin d'un dashboard sur mesure ?</h3>
+        <p>Je peux vous accompagner pour concevoir un reporting clair, utile et orienté performance.</p>
+        <a class="button" href="../fr/services.html">Découvrir mes services</a>
+      </div>
+
+      <div class="article-links">
+        <a href="index.html">← Retour au blog</a>
+        <a href="article-2.html">Article suivant →</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comment nettoyer des données sales avec Python (guide pratique) | Blog data analyst freelance</title>
+  <meta name="description" content="Guide pratique pour nettoyer des données sales avec Python : gérer les doublons, les valeurs manquantes, les formats incohérents et les anomalies.">
+  <meta property="og:title" content="Comment nettoyer des données sales avec Python (guide pratique) | Blog data analyst freelance">
+  <meta property="og:description" content="Guide pratique pour nettoyer des données sales avec Python et préparer un dataset exploitable pour l’analyse et le reporting.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg">
+  <meta property="og:url" content="https://lona-dotcom.github.io/powershell-ai-journey/blog/article-4.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Comment nettoyer des données sales avec Python (guide pratique) | Blog data analyst freelance">
+  <meta name="twitter:description" content="Guide pratique pour nettoyer des données sales avec Python et préparer un dataset exploitable pour l’analyse et le reporting.">
+  <meta name="twitter:image" content="https://lona-dotcom.github.io/powershell-ai-journey/assets/img/photo-profil.jpg">
+  <script type="application/ld+json">{ "@context": "https://schema.org", "@type": "BlogPosting", "headline": "Comment nettoyer des données sales avec Python (guide pratique)", "description": "Guide concret pour nettoyer des tableaux de données sales avec Python avant d’analyser ou de produire un reporting.", "author": { "@type": "Person", "name": "RAZANAKOTO Lovatahiana Nomenjanahary" }, "publisher": { "@type": "Organization", "name": "RAZANAKOTO L.N." }, "datePublished": "2026-09-13", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lona-dotcom.github.io/powershell-ai-journey/blog/article-4.html" } }</script>
+  <style>
+    :root { --bg:#f5f7fb; --card:#fff; --text:#111827; --muted:#475467; --primary:#102a43; --soft:#ebf3ff; --accent:#b45309; --line:#e5e7eb; --table:#eef2f7; --max:980px; }
+    *{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;line-height:1.75;background:var(--bg);color:var(--text)} a{color:inherit} .container{max-width:var(--max);margin:0 auto;padding:2rem 1.25rem 4rem}.article-shell{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 25px rgba(16,42,67,.08);padding:2rem 2rem 3rem}.breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:1rem}.breadcrumb a{text-decoration:none;color:var(--primary);font-weight:600}.eyebrow{display:inline-block;padding:.45rem .8rem;border-radius:999px;background:var(--soft);color:var(--primary);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.75rem} h1{margin:1rem 0 1rem;font-size:clamp(2.1rem,3.5vw,3.4rem);line-height:1.1;letter-spacing:-.04em;color:var(--primary)} .meta{color:var(--muted);font-size:.95rem;margin-bottom:1.5rem}.lead{font-size:1.08rem;color:var(--muted);margin-bottom:2rem} h2{margin-top:2.5rem;margin-bottom:.8rem;font-size:clamp(1.5rem,2vw,2rem);line-height:1.25;color:var(--primary)} h3{margin-top:1.6rem;margin-bottom:.5rem;font-size:1.2rem;color:var(--primary)} p,li{color:var(--text)} ul,ol{padding-left:1.3rem} .callout{background:linear-gradient(135deg,#f7fafc,#eff7ff);border-left:4px solid var(--accent);border-radius:12px;padding:1rem 1.1rem;margin:1.5rem 0}.cta-box{background:var(--primary);border-radius:18px;color:#fff;padding:1.4rem 1.5rem;margin-top:2rem}.button{display:inline-block;margin-top:.8rem;padding:.8rem 1.1rem;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:700}.article-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}.article-links a{text-decoration:none;color:var(--primary);font-weight:700}@media (max-width:640px){.article-shell{padding:1.2rem 1rem 2rem}} 
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article class="article-shell">
+      <div class="breadcrumb"><a href="index.html">Blog</a> / <span>Python</span></div>
+      <div class="eyebrow">Python</div>
+      <h1>Comment nettoyer des données sales avec Python (guide pratique)</h1>
+      <div class="meta"><time datetime="2026-09-13">13 septembre 2026</time> · 8 min de lecture</div>
+      <p class="lead">Les jeux de données ne sont pas toujours propres. En pratique, le nettoyage prend souvent plus de temps que l’analyse elle-même. Python permet de standardiser, corriger et structurer les données de manière fiable.</p>
+
+      <h2>Les problèmes les plus fréquents</h2>
+      <p>Les données sales peuvent contenir des valeurs manquantes, des doublons, des formats incohérents ou des lignes incohérentes. Sans correction, la qualité des résultats est compromise.</p>
+      <ul>
+        <li>Valeurs vides ou nulles</li>
+        <li>Doublons de clients ou de transactions</li>
+        <li>Dates au mauvais format</li>
+        <li>Typographie incohérente (espaces, majuscules, accents)</li>
+      </ul>
+
+      <h2>Étape 1 : repérer les anomalies</h2>
+      <p>La première étape consiste à inspecter les colonnes et à mesurer leur qualité. Il faut observer les valeurs nulles, les doublons et les écarts de format.</p>
+      <div class="callout"><strong>Exemple :</strong> une colonne de date peut contenir des formats différents comme 2024-01-01, 01/01/2024 ou “janvier 2024”.</div>
+
+      <h2>Étape 2 : normaliser les colonnes</h2>
+      <p>Les données doivent être rendues uniformes. Cela passe par le nettoyage des espaces, la standardisation des textes et la conversion des types.</p>
+      <ul>
+        <li>Supprimer les espaces en trop</li>
+        <li>Mettre les chaînes en minuscules ou standardiser la casse</li>
+        <li>Convertir les colonnes en types adaptés</li>
+      </ul>
+
+      <h2>Étape 3 : gérer les valeurs manquantes</h2>
+      <p>Les valeurs manquantes peuvent être remplacées par une valeur par défaut, une médiane ou une stratégie plus adaptée selon le cas d’usage.</p>
+      <ul>
+        <li>Supprimer les lignes trop incomplètes</li>
+        <li>Remplacer par la moyenne ou la médiane</li>
+        <li>Compléter via une règle métier</li>
+      </ul>
+
+      <h2>Étape 4 : supprimer les doublons</h2>
+      <p>Les doublons artificiellement gonflent les volumes et biaisent la performance. Python permet de les identifier et de les supprimer selon une règle de jointure ou d’unicité.</p>
+
+      <h2>Étape 5 : valider le résultat</h2>
+      <p>Le nettoyage est réussi lorsqu’on a un jeu de données cohérent, exploitable et documenté. Il faut ensuite valider la qualité sur des indicateurs simples : volume, complétude, cohérence et distribution.</p>
+
+      <h2>Conclusion</h2>
+      <p>Nettoyer des données avec Python permet de passer d’un fichier bruité à un dataset fiable, exploitable pour les dashboards, les analyses et la décision.</p>
+      <div class="cta-box">
+        <h3>Vous avez un jeu de données incomplet ou incohérent ?</h3>
+        <p>Je peux vous aider à nettoyer, structurer et exploiter vos données pour obtenir des analyses fiables.</p>
+        <a class="button" href="../fr/services.html">Découvrir mes services</a>
+      </div>
+      <div class="article-links"><a href="index.html">← Retour au blog</a> <a href="article-5.html">Article suivant →</a></div>
+    </article>
+  </main>
+</body>
+</html>

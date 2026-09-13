@@ -1,0 +1,46 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /_draft/
+Disallow: /node_modules/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /_draft/
+Disallow: /node_modules/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /_draft/
+Disallow: /node_modules/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /_draft/
+Disallow: /node_modules/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /.git/
+Disallow: /_draft/
+Disallow: /node_modules/
+
+Sitemap: https://lona-dotcom.github.io/powershell-ai-journey/sitemap.xml
