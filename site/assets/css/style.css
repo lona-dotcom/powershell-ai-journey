@@ -716,6 +716,27 @@ hr {
   border-color: var(--color-accent-hover);
 }
 
+[data-theme="dark"] .faq-cta .cta-card {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-color: rgba(148, 163, 184, 0.22);
+  box-shadow: 0 14px 32px rgb(15 23 42 / 32%);
+}
+
+[data-theme="dark"] .faq-cta .cta-card p {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .faq-cta .cta-card a {
+  color: #0f172a;
+  background: #fbbf24;
+  border-color: #fbbf24;
+}
+
+[data-theme="dark"] .faq-cta .cta-card a:hover {
+  background: #f59e0b;
+  border-color: #f59e0b;
+}
+
 .intro {
   max-width: var(--content-width);
   margin-bottom: var(--space-10);
