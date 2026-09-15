@@ -1,0 +1,822 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Roadmap Ingrénierie Pédagogique & Agents IA</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+            :root {
+                --primary: #6366f1;
+                --primary-dark: #4f46e5;
+                --accent: #06b6d4;
+                --bg: #090d16;
+                --card-bg: #111827;
+                --text: #e2e8f0;
+                --text-muted: #94a3b8;
+                --border: #1e293b;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Outfit', sans-serif;
+                background-color: #ffffff;
+                color: #1e293b;
+                line-height: 1.6;
+                padding: 0;
+            }
+
+            .cover-page {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+                color: #ffffff;
+                text-align: center;
+                padding: 4rem;
+                page-break-after: always;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .cover-page::before {
+                content: '';
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+                top: -200px;
+                right: -200px;
+                border-radius: 50%;
+            }
+
+            .badge {
+                background: rgba(99, 102, 241, 0.2);
+                color: #818cf8;
+                border: 1px solid rgba(99, 102, 241, 0.4);
+                padding: 0.5rem 1.5rem;
+                border-radius: 50px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 2rem;
+            }
+
+            .cover-page h1 {
+                font-size: 3rem;
+                font-weight: 800;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+                background: linear-gradient(to right, #ffffff, #94a3b8);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .cover-page p {
+                font-size: 1.25rem;
+                color: #94a3b8;
+                max-width: 700px;
+                margin-bottom: 3rem;
+            }
+
+            .cover-meta {
+                display: flex;
+                gap: 2rem;
+                font-size: 0.95rem;
+                color: #64748b;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 2rem;
+            }
+
+            .content-container {
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 3rem 2rem;
+            }
+
+            h1, h2, h3 {
+                color: #0f172a;
+                font-weight: 700;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+                border-bottom: 3px solid var(--primary);
+                padding-bottom: 0.5rem;
+                margin-top: 3rem;
+                margin-bottom: 1.5rem;
+                page-break-before: always;
+            }
+
+            h1:first-of-type {
+                page-break-before: avoid;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                color: #334155;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+                color: #475569;
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            p {
+                margin-bottom: 1rem;
+                color: #334155;
+            }
+
+            ul {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+
+            li {
+                margin-bottom: 0.5rem;
+                color: #475569;
+            }
+
+            strong {
+                color: #0f172a;
+            }
+
+            /* Phase specific styling via DOM structure */
+            hr {
+                border: none;
+                height: 1px;
+                background: #e2e8f0;
+                margin: 2rem 0;
+            }
+
+            .page-break {
+                page-break-after: always;
+            }
+
+            @page {
+                size: A4;
+                margin: 20mm;
+                @bottom-right {
+                    content: counter(page);
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 9pt;
+                    color: #94a3b8;
+                }
+                @bottom-left {
+                    content: "Roadmap IA Agent - Masterclass";
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 9pt;
+                    color: #94a3b8;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cover-page">
+            <div class="badge">Masterclass d'Ingénierie Pédagogique</div>
+            <h1>ROADMAP D'APPRENTISSAGE<br>DÉVELOPPEMENT D'AGENTS IA</h1>
+            <p>Le plan directeur ultime pour maîtriser la conception, l'orchestration, l'évaluation et l'optimisation des Agents Intelligents et Systèmes Multi-Agents de débutant à expert.</p>
+            <div class="cover-meta">
+                <span>🎯 Version 2026</span>
+                <span>⚡ Approche Agentique & Pragmatique</span>
+                <span>🚀 8 Phases Structurées</span>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <p>PHASE 0 : FONDATIONS</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Fondations Techniques et Protocolaires</li>
+<li>Durée estimée : 2 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Maîtriser les prérequis indispensables en programmation, manipulation de données et environnements de développement nécessaires pour concevoir des applications interagissant avec l'IA.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Écrire et structurer du code en Python ou JavaScript/TypeScript.</li>
+<li>Manipuler des structures de données JSON et consommer des API REST via HTTP.</li>
+<li>Gérer le versionnage de code avec Git et utiliser le terminal en ligne de commande.</li>
+<li>Configurer un environnement virtuel et installer des dépendances de paquets.</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Programmation synchrone et asynchrone (bases).</li>
+<li>Requêtes et réponses HTTP (méthodes, en-têtes, codes de statut).</li>
+<li>Sérialisation et désérialisation de données (JSON).</li>
+<li>Gestion des flux de contrôle et structures de données fondamentales (listes, dictionnaires, objets).</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>Python / Node.js (Runtime)</li>
+<li>Git &amp; GitHub (Alternatives : GitLab, Gitea)</li>
+<li>Terminal (Bash / PowerShell / Zsh)</li>
+<li>Postman / cURL / Bruno (Alternatives gratuites pour tester les API)</li>
+<li>VS Code / Cursor (Éditeurs de code)</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Aucun prérequis technique particulier (niveau débutant absolu).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Script d'automatisation simple de manipulation de fichiers locaux en script.</li>
+<li>Consommation d'une API publique ouverte pour récupérer et filtrer des données JSON.</li>
+<li>Initialisation d'un dépôt Git, création de branches et commit de modifications.</li>
+<li>Installation de paquets tiers via un gestionnaire de paquets (pip ou npm).</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Création d'un script en ligne de commande (CLI) qui interroge une API météo publique, formate les données reçues en JSON propre, et enregistre un rapport localement tout en sauvegardant l'historique dans un dépôt Git.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Capacité à écrire un script fonctionnel qui interagit avec une API externe sans assistance.</li>
+<li>Maîtrise des commandes Git de base (clone, add, commit, push).</li>
+<li>Compréhension de la structure d'un objet JSON et capacité à y extraire des valeurs imbriquées.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation officielle des langages (Python.org / Node.js).</li>
+<li>Cours interactifs en ligne sur les bases de Git et du terminal.</li>
+<li>Guides sur le protocole HTTP et les principes des API REST.</li>
+</ul>
+<p>PHASE 1 : INTRODUCTION AUX LLMS</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Introduction aux Grands Modèles de Langage (LLMs)</li>
+<li>Durée estimée : 2 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Comprendre le fonctionnement fondamental des LLMs, maîtriser l'art du prompting programmatique et intégrer des modèles via leurs API respectives en tenant compte des aspects économiques.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Rédiger des prompts structurés et efficaces (few-shot, chain-of-thought, system prompts).</li>
+<li>Consommer les API de fournisseurs de LLMs (OpenAI, Anthropic, Google Gemini, ou équivalents open source).</li>
+<li>Gérer la consommation des tokens et estimer les coûts associés aux requêtes.</li>
+<li>Paramétrer les hyperparamètres d'inférence (température, top_p, max_tokens).</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Tokens et tokenisation.</li>
+<li>Fenêtre de contexte (Context Window).</li>
+<li>Température et déterminisme dans la génération.</li>
+<li>System Prompt vs User Prompt vs Assistant Message.</li>
+<li>Modèles tarifaires par token (input/output).</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>OpenAI API / Anthropic API / Google Gemini API.</li>
+<li>OpenRouter / Groq (Alternatives pour tester différents modèles à moindre coût).</li>
+<li>LiteLLM (Abstraction pour appeler plusieurs fournisseurs).</li>
+<li>Tokenizer playground (outils de visualisation de tokens).</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 0 (maîtrise des API REST et de Python/JS).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Script d'appel d'API LLM simple avec passage d'un prompt système.</li>
+<li>Implémentation d'une fonction de calcul et de limitation du nombre de tokens avant envoi.</li>
+<li>Test comparatif des réponses d'un même prompt avec différentes températures.</li>
+<li>Rédaction d'un prompt complexe utilisant la technique du &quot;Chain-of-Thought&quot;.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Développement d'un assistant de résumé de texte automatisé par API, capable de prendre un long document brut, de respecter une limite de tokens stricte, d'ajuster dynamiquement les paramètres d'inférence selon le type de document, et de journaliser le coût exact de chaque requête.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Capacité à intégrer une API LLM dans un script propre avec gestion des erreurs (rate limits, timeouts).</li>
+<li>Maîtrise des concepts de base du prompting programmatique.</li>
+<li>Compréhension claire de l'impact financier et technique des tokens.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation officielle des fournisseurs de LLMs (OpenAI, Anthropic).</li>
+<li>Guides de prompting (OpenAI Cookbook, Anthropic Prompt Engineering Interactive Tutorial).</li>
+<li>Articles de recherche fondateurs sur l'architecture Transformer (vulgarisation).</li>
+</ul>
+<p>PHASE 2 : PREMIER AGENT SIMPLE</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Conception et Implémentation d'un Agent Simple (ReAct)</li>
+<li>Durée estimée : 3 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Transformer un simple LLM en un agent autonome capable de raisonner, de planifier des étapes et d'appeler des fonctions externes (Tool Calling) pour résoudre des tâches.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Structurer une boucle de raisonnement (modèle de type Perception-Raisonnement-Action).</li>
+<li>Définir, documenter et exposer des fonctions (tools) exploitables par un LLM.</li>
+<li>Intercepter les requêtes de tool calling du modèle et exécuter le code local correspondant.</li>
+<li>Réinjecter les résultats d'exécution des outils dans le contexte du LLM.</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Le pattern ReAct (Reason + Act).</li>
+<li>Le Function Calling / Tool Calling natif des LLMs.</li>
+<li>La boucle d'exécution agentique (Agent Loop).</li>
+<li>Gestion des erreurs et de la persistance de l'état dans un tour de parole.</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>Fonctionnalités natives de Tool Calling des API OpenAI / Anthropic / Gemini.</li>
+<li>LangChain (composants de base Core/Expression Language) ou exécution pure (Vanilla Python/JS).</li>
+<li>Instructor / Pydantic (pour structurer les entrées/sorties de fonctions).</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 1 (maîtrise des appels API LLM et des prompts).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Implémentation d'une fonction simple de calculatrice connectée à un LLM en mode tool calling.</li>
+<li>Création d'une boucle agentique basique sans framework (from scratch) en Python/JS.</li>
+<li>Gestion d'un appel d'outil retournant une erreur gérée par le LLM.</li>
+<li>Implémentation de schémas de validation stricts pour les arguments d'outils.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Création d'un agent conversationnel capable de répondre à des questions factuelles complexes en combinant l'accès à une base de données locale simulée via des outils personnalisés et l'interrogation d'une API externe (ex: météo ou conversion de devises).</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Compréhension intime du fonctionnement d'une boucle agentique (sans dépendre aveuglément d'une boîte noire).</li>
+<li>Capacité à concevoir des outils propres documentés (docstrings et schémas JSON) exploitables de manière fiable par un LLM.</li>
+<li>Résolution réussie de scénarios où l'agent doit enchaîner plusieurs outils pour aboutir à une réponse.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation officielle sur le Function / Tool Calling des principaux fournisseurs.</li>
+<li>Articles fondateurs sur le pattern ReAct (Yao et al.).</li>
+<li>Tutoriels sur Pydantic et la validation de schémas de données.</li>
+</ul>
+<p>PHASE 3 : AGENTS AVEC MÉMOIRE ET CONTEXTE</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Gestion de la Mémoire et Recherche Augmentée (RAG)</li>
+<li>Durée estimée : 3 semaines</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Implémenter différentes stratégies de mémoire (mémoire conversationnelle à court terme, résumé d'historique à long terme).</li>
+<li>Générer des embeddings textuels à l'aide de modèles spécialisés.</li>
+<li>Stocker et interroger des vecteurs dans une base de données dédiée (Vector Store).</li>
+<li>Concevoir et implémenter un pipeline RAG (Retrieval-Augmented Generation) complet.</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Espaces vectoriels et similarité cosinus.</li>
+<li>Stratégies de découpage de texte (Text Chunking et chevauchement/overlap).</li>
+<li>RAG naïf vs RAG avancé (hybride, re-ranking, query transformation).</li>
+<li>Gestion dynamique de la fenêtre de contexte et élagage de l'historique (Memory Pruning).</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>ChromaDB / FAISS / Qdrant / LanceDB (Bases de données vectorielles open source).</li>
+<li>Embeddings API (OpenAI text-embedding-3, modèles open source Hugging Face / Sentence-Transformers).</li>
+<li>Bibliothèques de manipulation de documents (PyPDF, LangChain document loaders).</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 2 (maîtrise de la boucle agentique et du tool calling).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Script de découpage (chunking) d'un document texte long avec différents paramètres.</li>
+<li>Génération d'embeddings et stockage dans une base vectorielle locale.</li>
+<li>Implémentation d'un outil de recherche sémantique que l'agent peut appeler (Vector Search Tool).</li>
+<li>Ajout d'un système de gestion de l'historique de conversation persistant en base de données.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Développement d'un agent expert sur une documentation technique interne : l'agent indexe un ensemble de fichiers PDF locaux, stocke les embeddings, et utilise un outil de recherche sémantique combiné à sa boucle de raisonnement pour répondre précisément aux questions des utilisateurs en citant ses sources.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Capacité à évaluer la pertinence des résultats récupérés par recherche sémantique (precision/recall du retrieval).</li>
+<li>Maîtrise de l'intégration de la mémoire conversationnelle dans une architecture agentique.</li>
+<li>Compréhension des limites des fenêtres de contexte et des stratégies de mitigation.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation des bases de données vectorielles open source.</li>
+<li>Littérature académique et technique sur le RAG avancé (blogs de Pinecone, LlamaIndex, etc.).</li>
+<li>Cours sur les embeddings et la représentation géométrique du texte.</li>
+</ul>
+<p>PHASE 4 : AGENTS MULTI-OUTILS ET ORCHESTRATION</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Orchestration Avancée et Standardisation (MCP)</li>
+<li>Durée estimée : 3 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Étendre les capacités des agents à interagir avec des environnements complexes, hétérogènes et distants grâce à des architectures de protocoles standardisés et des schémas de planification avancés.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Concevoir et implémenter des serveurs et clients basés sur le Model Context Protocol (MCP).</li>
+<li>Mettre en place des stratégies de planification complexes (Plan-and-Solve, réflexion autonome).</li>
+<li>Gérer l'exécution concurrente ou séquentielle d'outils multiples par un agent.</li>
+<li>Assurer la robustesse des flux d'exécution face aux pannes d'outils (gestion des retries, auto-correction).</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Le Model Context Protocol (architecture hôte/client/serveur d'outils).</li>
+<li>Planification dynamique et décomposition de tâches complexes (Task Decomposition).</li>
+<li>Gestion de l'état partagé et des contextes d'exécution isolés (Sandboxing).</li>
+<li>Évaluation de la trajectoire de l'agent (Trajectory Evaluation).</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>Model Context Protocol (SDKs officiels MCP).</li>
+<li>Docker (pour isoler l'exécution des outils si nécessaire).</li>
+<li>Outils de tracing et d'observabilité (LangSmith, Phoenix, Arize).</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 3 (maîtrise du RAG et de la gestion de contexte).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Création d'un serveur MCP personnalisé exposant des outils locaux (ex: système de fichiers, exécution de scripts).</li>
+<li>Connexion d'un agent à ce serveur MCP via un client standard.</li>
+<li>Implémentation d'un pattern de planification où l'agent rédige un plan d'action étape par étape avant d'exécuter les outils.</li>
+<li>Intégration d'un outil de traçage pour visualiser l'arbre d'exécution des appels de l'agent.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Conception d'un agent DevOps autonome capable de se connecter via MCP à un environnement de staging local, de planifier la résolution d'un problème technique (ex: analyse de logs d'erreur, exécution de commandes de test isolées, correction de code et validation), tout en traçant l'intégralité de sa démarche.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Maîtrise de la mise en œuvre et de la consommation de serveurs MCP.</li>
+<li>Capacité à concevoir des agents capables de décomposer de grands objectifs en sous-tâches gérables.</li>
+<li>Utilisation efficace d'outils de traçage pour déboguer les boucles de raisonnement complexes.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Spécifications officielles et documentation du Model Context Protocol (MCP).</li>
+<li>Papiers de recherche sur les architectures de planification d'agents autonomes.</li>
+<li>Documentation des plateformes d'observabilité LLM.</li>
+</ul>
+<p>PHASE 5 : AGENTS AUTONOMES ET MULTI-AGENTS</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Systèmes Multi-Agents et Frameworks d'Orchestration Avancés</li>
+<li>Durée estimée : 4 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Concevoir, orchestrer et coordonner des systèmes complexes impliquant plusieurs agents spécialisés collaborant pour résoudre des tâches de grande envergure.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Modéliser des rôles, des personas et des compétences distinctes pour différents agents.</li>
+<li>Orchestrer des workflows séquentiels, hiérarchiques ou basés sur des graphes d'état entre agents.</li>
+<li>Gérer les communications inter-agents (messages, tableaux de bord partagés, délégations).</li>
+<li>Résoudre les conflits et gérer les boucles de rétroaction (peer review) entre agents.</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Architectures multi-agents (collaborative vs compétitive).</li>
+<li>State Machines (machines à états) appliquées aux workflows LLM.</li>
+<li>Modèles de délégation de tâches et de supervision hiérarchique.</li>
+<li>Gestion du consensus et de la validation croisée (cross-validation).</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>LangGraph (pour la construction de graphes d'agents étatiques).</li>
+<li>CrewAI / AutoGen (Frameworks de haut niveau multi-agents).</li>
+<li>Bee Agent Framework ou équivalents open source modulaires.</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 4 (maîtrise du tool calling, des plans et du traçage).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Création d'un mini-système à deux agents (un rédacteur et un correcteur) échangeant des messages.</li>
+<li>Implémentation d'un workflow en graphe avec LangGraph incluant des conditions de routage dynamiques.</li>
+<li>Configuration d'une équipe hiérarchique (un manager et deux agents exécutants) avec CrewAI ou AutoGen.</li>
+<li>Gestion de la mémoire partagée entre plusieurs agents distincts.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Développement d'une agence virtuelle de rédaction de contenu de recherche : un agent &quot;Chercheur&quot; collecte des informations via le web/RAG, un agent &quot;Rédacteur&quot; produit un article structuré, un agent &quot;Relecteur&quot; critique le contenu selon des critères stricts, et un agent &quot;Éditeur&quot; valide la version finale, le tout orchestré via une machine à états robuste.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Capacité à concevoir et déboguer un système multi-agents complexe sans pertes de contexte.</li>
+<li>Maîtrise des concepts de graphes d'état et de gestion des transitions conditionnelles.</li>
+<li>Compréhension des cas d'usage où le multi-agent apporte une réelle valeur ajoutée par rapport à un agent unique.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation officielle de LangGraph, CrewAI et AutoGen.</li>
+<li>Articles de recherche sur les systèmes multi-agents coopératifs.</li>
+<li>Retours d'expérience et cas d'études industriels sur l'architecture multi-agents.</li>
+</ul>
+<p>PHASE 6 : ÉVALUATION, SÉCURITÉ, GARDE-FOUS ET DÉPLOIEMENT</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Production, Évaluation rigoureuse et Sécurité des Agents</li>
+<li>Durée estimée : 3 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Sécuriser les applications agentiques contre les vulnérabilités, évaluer systématiquement leurs performances et déployer des solutions prêtes pour la production.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Mettre en place des pipelines d'évaluation automatisée (frameworks LLM-as-a-judge).</li>
+<li>Identifier et contrer les vulnérabilités de sécurité courantes (Prompt Injection, Jailbreaking, fuite de données, exécution de code non sécurisée).</li>
+<li>Implémenter des garde-fous (guardrails) d'entrée et de sortie.</li>
+<li>Conteneuriser et déployer un agent sur une infrastructure cloud ou en serverless.</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>L'OWASP Top 10 pour les applications LLM (Prompt Injection, Insecure Output Handling, etc.).</li>
+<li>Évaluation basée sur des benchmarks et des jeux de données de test (Golden Datasets).</li>
+<li>Guardrails, filtrage de contenu et détection d'hallucinations.</li>
+<li>Stratégies de résilience (rate limiting, circuits breakers, fallbacks de modèles).</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>NeMo Guardrails / Llama Guard (Sécurité et filtrage).</li>
+<li>DeepEval / Ragas / Promptfoo (Outils d'évaluation automatisée).</li>
+<li>Docker / Kubernetes / Cloud Run / AWS Lambda (Déploiement).</li>
+<li>LangSmith / Phoenix (pour le monitoring en production).</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 5 (maîtrise des architectures d'agents et multi-agents).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Implémentation d'un filtre de garde-fou bloquant les tentatives d'injection de prompt malveillantes.</li>
+<li>Création d'un jeu de données de test (Golden Dataset) et évaluation automatisée d'un agent avec un framework dédié.</li>
+<li>Conteneurisation d'un agent simple via Docker.</li>
+<li>Mise en place d'un mécanisme de secours (fallback) vers un modèle plus petit ou une réponse statique en cas de timeout.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Audit de sécurité et industrialisation complète d'un agent développé lors des phases précédentes : intégration de garde-fous stricts contre les injections de prompts, mise en place d'un pipeline d'évaluation automatisée de la qualité des réponses sur un jeu de test de référence, et déploiement de l'agent dans un conteneur Docker sécurisé accessible via une API de production.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer à la phase suivante</li>
+</ol>
+<ul>
+<li>Capacité à concevoir une stratégie d'évaluation quantitative des performances d'un agent.</li>
+<li>Maîtrise des principales failles de sécurité spécifiques aux LLMs et mise en œuvre de contre-mesures efficaces.</li>
+<li>Aptitude à packager et déployer un système agentique en environnement conteneurisé.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation de l'OWASP Top 10 for LLM Applications.</li>
+<li>Guides et documentations des frameworks d'évaluation et de sécurité (Ragas, NeMo Guardrails).</li>
+<li>Littérature sur l'ingénierie de la fiabilité des systèmes IA (AI Reliability Engineering).</li>
+</ul>
+<p>PHASE 7 : EXPERTISE</p>
+<ol>
+<li>Nom de la phase et durée estimée</li>
+</ol>
+<ul>
+<li>Nom : Optimisation Avancée, Fine-Tuning et Modèles Open Source</li>
+<li>Durée estimée : 4 semaines</li>
+</ul>
+<ol start="2">
+<li>Objectif global de la phase</li>
+</ol>
+<ul>
+<li>Atteindre le niveau d'expertise en optimisant les coûts, la latence et les performances des agents par le choix de modèles open source, le fine-tuning spécialisé et l'optimisation des architectures d'inférence.</li>
+</ul>
+<ol start="3">
+<li>Liste des compétences clés à acquérir</li>
+</ol>
+<ul>
+<li>Sélectionner, télécharger et exécuter des modèles open source en local ou sur infrastructure dédiée.</li>
+<li>Préparer des jeux de données d'entraînement et réaliser du fine-tuning (Supervised Fine-Tuning) pour des tâches spécifiques d'agents.</li>
+<li>Optimiser la vitesse d'inférence (quantification, moteurs d'inférence haute performance).</li>
+<li>Concevoir des architectures d'agents hybrides combinant petits modèles locaux spécialisés et grands modèles de raisonnement généraux.</li>
+</ul>
+<ol start="4">
+<li>Liste des concepts théoriques à comprendre</li>
+</ol>
+<ul>
+<li>Techniques de quantification (GGUF, AWQ, GPTQ, FP8).</li>
+<li>Fine-Tuning supervisé (SFT) et méthodes d'alignement (DPO, ORPO).</li>
+<li>Inférence locale vs inférence cloud managée.</li>
+<li>Distillation de modèles et spécialisation pour le tool calling.</li>
+</ul>
+<ol start="5">
+<li>Outils et technologies à découvrir</li>
+</ol>
+<ul>
+<li>Ollama / LM Studio (pour exécuter des modèles open source en local).</li>
+<li>vLLM / llama.cpp (Moteurs d'inférence haute performance).</li>
+<li>Hugging Face Transformers / PEFT / TRL (pour l'entraînement et le fine-tuning).</li>
+<li>Unsloth (pour un fine-tuning efficace et rapide).</li>
+</ul>
+<ol start="6">
+<li>Prérequis pour aborder la phase</li>
+</ol>
+<ul>
+<li>Validation de la Phase 6 (maîtrise de la production, de la sécurité et du déploiement).</li>
+</ul>
+<ol start="7">
+<li>Types d'exercices à réaliser</li>
+</ol>
+<ul>
+<li>Exécution et test d'un modèle open source local (ex: Llama ou Mistral) via Ollama ou llama.cpp.</li>
+<li>Préparation d'un jeu de données au format JSONL pour l'entraînement au tool calling d'un petit modèle.</li>
+<li>Réalisation d'un fine-tuning léger (QLoRA) sur un modèle open source pour spécialiser son comportement d'agent.</li>
+<li>Comparaison comparative des performances de latence et de coût entre un grand modèle cloud et un modèle local quantifié.</li>
+</ul>
+<ol start="8">
+<li>Projet capstone de fin de phase</li>
+</ol>
+<ul>
+<li>Refonte complète d'un système d'agent multi-agents complexe en remplaçant les appels systématiques aux API propriétaires cloud par un mix hybride : utilisation de petits modèles open source finement ajustés pour les tâches de classification et d'appel d'outils exécutés localement via un moteur d'inférence optimisé, réservant les grands modèles propriétaires uniquement aux tâches complexes de raisonnement de haut niveau.</li>
+</ul>
+<ol start="9">
+<li>Critères de validation pour passer au stade d'expert</li>
+</ol>
+<ul>
+<li>Capacité avérée à déployer, orchestrer et optimiser des modèles open source pour des cas d'usage agentiques spécifiques.</li>
+<li>Maîtrise des compromis entre coût, latence, taille du modèle et performance de raisonnement.</li>
+<li>Autonomie complète dans la conception, la sécurisation, l'évaluation et l'optimisation d'architectures d'agents de pointe.</li>
+</ul>
+<ol start="10">
+<li>Ressources recommandées</li>
+</ol>
+<ul>
+<li>Documentation officielle de Hugging Face, vLLM et Ollama.</li>
+<li>Papiers de recherche récents sur l'optimisation des LLMs et le fine-tuning orienté agents.</li>
+<li>Littérature technique de pointe sur l'inférence locale et la quantification.</li>
+</ul>
+
+        </div>
+    </body>
+    </html>
+    
